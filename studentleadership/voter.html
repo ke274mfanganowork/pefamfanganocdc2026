@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Secure digital ballot for KE0274 PEFA Mfangano CYDC Student Leadership Elections 2026.">
+<meta name="theme-color" content="#0B1B33">
+<title>Cast Your Ballot | Mfangano Digital Voting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* =========================================================
+   DESIGN TOKENS — Shared with the rest of the platform
+   ========================================================= */
+:root {
+  --blue-950: #040B1A;
+  --blue-900: #0B1B33;
+  --blue-850: #0F2544;
+  --blue-800: #132E55;
+  --blue-700: #1A3F73;
+  --blue-600: #1E4FD8;
+  --blue-500: #2563EB;
+  --blue-400: #3B82F6;
+  --blue-300: #60A5FA;
+  --blue-200: #93C5FD;
+  --blue-100: #BFDBFE;
+  --blue-50:  #EFF6FF;
+  --sky-500:  #0EA5E9;
+  --sky-400:  #38BDF8;
+  --sky-300:  #7DD3FC;
+  --amber-600: #D97706;
+  --amber-500: #F59E0B;
+  --amber-400: #FBBF24;
+  --amber-300: #FCD34D;
+  --amber-100: #FEF3C7;
+  --forest-600: #1e6b3a;
+  --forest-500: #2d8a4e;
+  --stone-950: #0C0A09;
+  --stone-900: #1C1917;
+  --stone-800: #292524;
+  --stone-700: #44403C;
+  --stone-600: #57534E;
+  --stone-500: #78716C;
+  --stone-400: #A8A29E;
+  --stone-300: #D6D3D1;
+  --stone-200: #E7E5E4;
+  --stone-100: #F5F5F4;
+  --stone-50:  #FAFAF9;
+  --ivory:    #FDFCF8;
+  --cream:    #FAF7F0;
+  --pearl:    #F8F6F1;
+
+  --bg-page:       var(--ivory);
+  --bg-surface:    #ffffff;
+  --bg-elevated:   #ffffff;
+  --bg-muted:      var(--pearl);
+  --bg-inverse:    var(--blue-900);
+
+  --text-primary:   var(--blue-950);
+  --text-secondary: var(--stone-700);
+  --text-tertiary:  var(--stone-500);
+  --text-quaternary:var(--stone-400);
+  --text-inverse:   var(--ivory);
+  --text-accent:    var(--blue-600);
+
+  --border-hairline: rgba(12, 27, 51, 0.06);
+  --border-subtle:   rgba(12, 27, 51, 0.10);
+  --border-default:  rgba(12, 27, 51, 0.16);
+  --border-strong:   rgba(12, 27, 51, 0.24);
+
+  --gradient-hero: linear-gradient(135deg, var(--blue-950) 0%, var(--blue-900) 40%, var(--blue-800) 100%);
+  --gradient-royal: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-600) 100%);
+  --gradient-warm: linear-gradient(135deg, var(--amber-500) 0%, var(--amber-400) 100%);
+  --gradient-mesh: radial-gradient(at 20% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                   radial-gradient(at 80% 0%, rgba(14, 165, 233, 0.10) 0%, transparent 50%),
+                   radial-gradient(at 80% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+                   radial-gradient(at 0% 100%, rgba(30, 79, 216, 0.08) 0%, transparent 50%);
+
+  --shadow-xs: 0 1px 2px rgba(11, 27, 51, 0.04);
+  --shadow-sm: 0 2px 4px rgba(11, 27, 51, 0.04), 0 1px 2px rgba(11, 27, 51, 0.06);
+  --shadow-md: 0 4px 16px -2px rgba(11, 27, 51, 0.08), 0 2px 4px rgba(11, 27, 51, 0.04);
+  --shadow-lg: 0 12px 32px -8px rgba(11, 27, 51, 0.12), 0 4px 8px rgba(11, 27, 51, 0.04);
+  --shadow-xl: 0 24px 64px -16px rgba(11, 27, 51, 0.18), 0 8px 16px rgba(11, 27, 51, 0.06);
+  --shadow-2xl: 0 48px 96px -24px rgba(11, 27, 51, 0.28);
+  --shadow-blue: 0 20px 48px -12px rgba(30, 79, 216, 0.35);
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-2xl: 32px;
+  --r-3xl: 40px;
+  --r-full: 9999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-base: 360ms;
+  --dur-slow: 640ms;
+
+  --container: 1400px;
+  --header-h: 72px;
+}
+
+[data-theme="dark"] {
+  --bg-page:     #050B16;
+  --bg-surface:  #0B1526;
+  --bg-elevated: #111E36;
+  --bg-muted:    #0A1322;
+  --bg-inverse:  var(--ivory);
+
+  --text-primary:   #F5F7FA;
+  --text-secondary: #B8C5D9;
+  --text-tertiary:  #7A8BA3;
+  --text-quaternary:#5A6B80;
+  --text-inverse:   var(--blue-950);
+  --text-accent:    var(--sky-400);
+
+  --border-hairline: rgba(255,255,255,0.05);
+  --border-subtle:   rgba(255,255,255,0.08);
+  --border-default:  rgba(255,255,255,0.14);
+  --border-strong:   rgba(255,255,255,0.22);
+
+  --gradient-hero: linear-gradient(135deg, #020611 0%, #050E1F 40%, #0A1B35 100%);
+  --gradient-mesh: radial-gradient(at 20% 20%, rgba(59, 130, 246, 0.16) 0%, transparent 50%),
+                   radial-gradient(at 80% 0%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
+                   radial-gradient(at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 64px rgba(0,0,0,0.6);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--dur-slow) var(--ease-out), color var(--dur-base) var(--ease-out);
+  position: relative;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+::selection { background: var(--blue-600); color: white; }
+
+:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+[data-theme="dark"] :focus-visible { outline-color: var(--sky-400); }
+
+.skip-link {
+  position: absolute;
+  top: -100px; left: 1rem;
+  background: var(--blue-900);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--r-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  z-index: 10000;
+  transition: top var(--dur-fast);
+}
+.skip-link:focus { top: 1rem; }
+
+/* =========================================================
+   AMBIENT BACKGROUND
+   ========================================================= */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.ambient-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-mesh);
+  opacity: 0.7;
+}
+.ambient-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-hairline) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 85%);
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.28;
+  animation: orbFloat 30s ease-in-out infinite;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+[data-theme="dark"] .orb { mix-blend-mode: normal; opacity: 0.35; }
+.orb-1 { width: 700px; height: 700px; background: radial-gradient(circle, var(--blue-400), transparent 70%); top: -20%; left: -15%; }
+.orb-2 { width: 550px; height: 550px; background: radial-gradient(circle, var(--sky-400), transparent 70%); top: 40%; right: -15%; animation-delay: -10s; }
+.orb-3 { width: 500px; height: 500px; background: radial-gradient(circle, var(--amber-400), transparent 70%); bottom: -20%; left: 20%; opacity: 0.2; animation-delay: -20s; }
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(80px, -60px) scale(1.08); }
+  66% { transform: translate(-60px, 80px) scale(0.95); }
+}
+
+/* =========================================================
+   PREMIUM HEADER
+   ========================================================= */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  z-index: 1000;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(253, 252, 248, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-hairline);
+  transition: all var(--dur-base) var(--ease-out);
+}
+[data-theme="dark"] .header {
+  background: rgba(5, 11, 22, 0.82);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-mark {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--gradient-hero);
+  display: grid; place-items: center;
+  color: var(--amber-400);
+  font-size: 1rem;
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+  flex-shrink: 0;
+}
+.header-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 60%);
+}
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.header-brand-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+.header-brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-top: 1px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.header-nav-link {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--r-md);
+  transition: all var(--dur-base) var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-muted);
+}
+.header-nav-link i { font-size: 0.75rem; }
+
+.theme-toggle {
+  width: 40px; height: 40px;
+  border-radius: var(--r-md);
+  background: var(--bg-muted);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-out);
+  margin-left: 4px;
+}
+.theme-toggle:hover {
+  background: var(--blue-900);
+  color: white;
+  border-color: var(--blue-900);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .header-brand-sub { display: none; }
+  .header-brand-title { font-size: 0.85rem; }
+  .header-nav-link span { display: none; }
+  .header-nav-link { padding: 10px; }
+}
+
+/* =========================================================
+   VOTER VIEW (Verification) — Editorial Split
+   ========================================================= */
+.voter-view {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  padding-top: var(--header-h);
+}
+.voter-view.hidden { display: none; }
+
+.voter-context {
+  position: relative;
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  overflow: hidden;
+  background: var(--gradient-hero);
+}
+.voter-context::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.25), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(245, 158, 11, 0.15), transparent 50%);
+  pointer-events: none;
+}
+.voter-context::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 70%);
+}
+.voter-context > * { position: relative; z-index: 1; }
+
+.voter-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber-300);
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+.voter-eyebrow .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--amber-400);
+  box-shadow: 0 0 8px var(--amber-400);
+  animation: statusPulse 2.4s ease-in-out infinite;
+}
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.voter-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  font-variation-settings: "opsz" 144;
+}
+.voter-headline .italic {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--amber-300);
+}
+.voter-subline {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 3rem;
+}
+
+.voter-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.voter-principle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.voter-principle-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber-300);
+}
+.voter-principle-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+}
+
+.voter-form-side {
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.voter-form-wrapper {
+  width: 100%;
+  max-width: 460px;
+}
+
+.voter-form-head { margin-bottom: 2rem; }
+.voter-form-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.voter-form-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--text-tertiary);
+}
+.voter-form-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.voter-form-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.form-group { margin-bottom: 1.25rem; }
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+}
+
+/* KE number input — refined */
+.ke-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-out);
+}
+.ke-input-wrap:focus-within {
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 4px rgba(30, 79, 216, 0.12), var(--shadow-md);
+}
+[data-theme="dark"] .ke-input-wrap:focus-within {
+  border-color: var(--sky-400);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15), var(--shadow-md);
+}
+.ke-input-wrap.error {
+  border-color: #e53e3e;
+  box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.12);
+}
+.ke-prefix {
+  padding: 0 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  border-right: 1px solid var(--border-subtle);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  user-select: none;
+  background: var(--bg-muted);
+}
+.ke-input {
+  flex: 1;
+  padding: 16px 18px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.4em;
+  text-align: center;
+  outline: none;
+  min-width: 0;
+}
+.ke-input::placeholder { color: var(--text-quaternary); letter-spacing: 0.4em; }
+
+.form-hint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.form-hint i { color: var(--amber-500); font-size: 0.65rem; }
+
+.form-error {
+  min-height: 20px;
+  color: #e53e3e;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity var(--dur-fast);
+}
+.form-error.visible { opacity: 1; }
+.form-error i { font-size: 0.75rem; }
+
+.btn-primary {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--gradient-royal);
+  color: white;
+  border: none;
+  border-radius: var(--r-lg);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--shadow-lg), 0 8px 20px -6px rgba(30, 79, 216, 0.35);
+  transition: all var(--dur-base) var(--ease-out);
+  letter-spacing: -0.005em;
+  min-height: 56px;
+  margin-top: 1.5rem;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2xl), var(--shadow-blue);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn-primary i { transition: transform var(--dur-base); }
+.btn-primary:hover:not(:disabled) i.fa-arrow-right { transform: translateX(4px); }
+
+.voter-foot {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.back-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--dur-base);
+}
+.back-link:hover { color: var(--blue-600); }
+[data-theme="dark"] .back-link:hover { color: var(--sky-400); }
+.back-link i { font-size: 0.7rem; transition: transform var(--dur-base); }
+.back-link:hover i { transform: translateX(-3px); }
+
+.voter-hint {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--text-quaternary);
+}
+
+@media (max-width: 1024px) {
+  .voter-view { grid-template-columns: 1fr; }
+  .voter-context { padding: 3rem 2rem; }
+  .voter-principles { grid-template-columns: 1fr; gap: 1rem; }
+}
+@media (max-width: 640px) {
+  .voter-form-side { padding: 2rem 1.5rem; }
+  .voter-foot { flex-direction: column; align-items: flex-start; }
+}
+
+/* =========================================================
+   VOTING VIEW — Editorial Ballot Interface
+   ========================================================= */
+.voting-view {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: calc(var(--header-h) + 2rem) clamp(1.25rem, 4vw, 2.5rem) 4rem;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.voting-view.hidden { display: none; }
+
+/* Progress strip — editorial segmented bar */
+.progress-strip {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-2xl);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+}
+.progress-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.progress-value {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+.progress-value .of {
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin: 0 4px;
+}
+
+.progress-track {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  min-width: 200px;
+}
+.progress-seg {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-muted);
+  border-radius: var(--r-full);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--dur-base) var(--ease-out);
+}
+.progress-seg.complete::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--blue-600), var(--sky-400));
+  border-radius: var(--r-full);
+}
+.progress-seg.current {
+  background: linear-gradient(90deg, var(--amber-500), var(--amber-400));
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+.progress-ke {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+.progress-ke .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--forest-500);
+  box-shadow: 0 0 6px var(--forest-500);
+}
+
+@media (max-width: 768px) {
+  .progress-strip { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .progress-track { min-width: 0; }
+  .progress-ke { justify-content: center; }
+}
+
+/* Ballot hero */
+.ballot-hero {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ballot-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(30, 79, 216, 0.08);
+  border: 1px solid rgba(30, 79, 216, 0.18);
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  margin-bottom: 1rem;
+}
+[data-theme="dark"] .ballot-eyebrow {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.2);
+  color: var(--sky-400);
+}
+
+.ballot-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 0.5rem;
+}
+.ballot-title .italic {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--blue-600);
+}
+[data-theme="dark"] .ballot-title .italic { color: var(--sky-400); }
+.ballot-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.ballot-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+.ballot-meta-row {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ballot-meta-row .num {
+  color: var(--amber-500);
+  font-weight: 600;
+}
+.ballot-meta-row i { font-size: 0.65rem; }
+
+@media (max-width: 768px) {
+  .ballot-meta { align-items: flex-start; }
+}
+
+/* Error alert */
+.alert {
+  padding: 14px 18px;
+  background: rgba(229, 62, 62, 0.08);
+  border: 1px solid rgba(229, 62, 62, 0.25);
+  border-left: 3px solid #e53e3e;
+  border-radius: var(--r-md);
+  color: #dc2626;
+  font-size: 0.88rem;
+  font-weight: 500;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+[data-theme="dark"] .alert {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+.alert.show { display: flex; animation: slideDown 0.3s var(--ease-expo); }
+.alert i { font-size: 0.85rem; flex-shrink: 0; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Candidates grid */
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.candidate-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-hairline);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-out);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.candidate-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-warm);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease-expo);
+}
+.candidate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-default);
+}
+.candidate-card.selected {
+  border-color: var(--amber-400);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.06), rgba(245, 158, 11, 0.01));
+  box-shadow: var(--shadow-lg), 0 0 0 4px rgba(245, 158, 11, 0.08);
+}
+[data-theme="dark"] .candidate-card.selected {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(251, 191, 36, 0.02));
+  box-shadow: var(--shadow-lg), 0 0 0 4px rgba(251, 191, 36, 0.12);
+}
+.candidate-card.selected::before { transform: scaleX(1); }
+
+.candidate-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.candidate-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, var(--blue-50), var(--sky-100));
+  color: var(--blue-700);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.5);
+  transition: all var(--dur-base) var(--ease-out);
+}
+[data-theme="dark"] .candidate-avatar {
+  background: linear-gradient(135deg, rgba(30, 79, 216, 0.2), rgba(14, 165, 233, 0.15));
+  color: var(--sky-400);
+}
+.candidate-card.selected .candidate-avatar {
+  background: linear-gradient(135deg, var(--amber-100), #fff);
+  color: var(--amber-600);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(245, 158, 11, 0.3);
+}
+[data-theme="dark"] .candidate-card.selected .candidate-avatar {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(251, 191, 36, 0.15));
+  color: var(--amber-400);
+}
+
+.candidate-info { flex: 1; min-width: 0; }
+.candidate-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.candidate-sub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.candidate-card.selected .candidate-sub {
+  color: var(--amber-600);
+}
+[data-theme="dark"] .candidate-card.selected .candidate-sub {
+  color: var(--amber-400);
+}
+
+.candidate-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-default);
+  background: var(--bg-muted);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: transparent;
+  font-size: 0.7rem;
+  transition: all var(--dur-base) var(--ease-out);
+  margin-top: 4px;
+}
+.candidate-card.selected .candidate-check {
+  background: var(--gradient-warm);
+  border-color: var(--amber-400);
+  color: var(--blue-950);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.candidate-card:hover .candidate-avatar {
+  transform: scale(1.04) rotate(-2deg);
+}
+
+@media (max-width: 640px) {
+  .candidates-grid { grid-template-columns: 1fr; }
+  .candidate-card { padding: 1.25rem; }
+  .candidate-avatar { width: 48px; height: 48px; font-size: 1rem; }
+  .candidate-name { font-size: 1rem; }
+}
+
+/* Navigation buttons */
+.ballot-actions {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.btn-ghost {
+  padding: 14px 22px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-lg);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-out);
+  min-height: 50px;
+}
+.btn-ghost:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--blue-600);
+  color: var(--blue-600);
+  box-shadow: var(--shadow-md);
+}
+[data-theme="dark"] .btn-ghost:hover:not(:disabled) {
+  border-color: var(--sky-400);
+  color: var(--sky-400);
+}
+.btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-ghost i { font-size: 0.75rem; transition: transform var(--dur-base); }
+.btn-ghost:hover:not(:disabled) i.fa-arrow-left { transform: translateX(-3px); }
+
+.btn-next {
+  padding: 14px 28px;
+  background: var(--gradient-royal);
+  color: white;
+  border: none;
+  border-radius: var(--r-lg);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--shadow-lg), 0 8px 20px -6px rgba(30, 79, 216, 0.35);
+  transition: all var(--dur-base) var(--ease-out);
+  min-height: 50px;
+  letter-spacing: -0.005em;
+}
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), var(--shadow-blue);
+}
+.btn-next i { transition: transform var(--dur-base); }
+.btn-next:hover i.fa-arrow-right { transform: translateX(4px); }
+
+.btn-submit {
+  background: var(--gradient-warm);
+  color: var(--blue-950);
+  box-shadow: var(--shadow-lg), 0 8px 20px -6px rgba(245, 158, 11, 0.4);
+  font-weight: 700;
+}
+.btn-submit:hover {
+  box-shadow: var(--shadow-xl), 0 14px 28px -8px rgba(245, 158, 11, 0.5);
+}
+
+@media (max-width: 640px) {
+  .ballot-actions {
+    grid-template-columns: 1fr;
+  }
+  .btn-ghost, .btn-next, .btn-submit { width: 100%; }
+}
+
+/* =========================================================
+   SUCCESS MODAL
+   ========================================================= */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 11, 22, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-backdrop.active { display: flex; animation: fadeIn 0.3s var(--ease-expo); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-3xl);
+  padding: clamp(2rem, 4vw, 3rem);
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-2xl);
+  animation: scaleIn 0.4s var(--ease-expo);
+  position: relative;
+  overflow: hidden;
+}
+.modal::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--forest-500), var(--amber-400), var(--sky-400));
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--forest-500), #059669);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 20px 48px -12px rgba(16, 185, 129, 0.5);
+  position: relative;
+}
+.modal-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.2), transparent 55%);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+}
+.modal-title .italic {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--forest-600);
+}
+[data-theme="dark"] .modal-title .italic { color: #4ade80; }
+
+.modal-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.modal-receipt {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+.receipt-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.receipt-value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+.receipt-value.highlight { color: var(--forest-600); }
+[data-theme="dark"] .receipt-value.highlight { color: #4ade80; }
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-actions .btn-primary { margin-top: 0; }
+
+@media (max-width: 480px) {
+  .modal { padding: 1.75rem 1.5rem; }
+  .modal-icon { width: 68px; height: 68px; font-size: 1.6rem; }
+}
+
+/* =========================================================
+   REDUCED MOTION & PRINT
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .orb { animation: none; }
+}
+
+@media print {
+  .ambient-bg, .header, .theme-toggle, .modal-backdrop { display: none !important; }
+  body { background: white !important; color: black !important; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Premium Header -->
+  <header class="header" role="banner">
+    <a href="index.html" class="header-brand" aria-label="Back to voting portal">
+      <div class="header-mark" aria-hidden="true">
+        <i class="fas fa-heart"></i>
+      </div>
+      <div class="header-brand-text">
+        <span class="header-brand-title">KE0274 PEFA Mfangano</span>
+        <span class="header-brand-sub">CYDC · Digital Ballot</span>
+      </div>
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html" class="header-nav-link">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+      <a href="how-it-works.html" class="header-nav-link">
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <span>Guide</span>
+      </a>
+      <a href="leaders.html" class="header-nav-link">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <span>Leaders</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+        <i class="fas fa-sun" aria-hidden="true"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="content">
+    <!-- =========================================================
+         VERIFICATION VIEW — Editorial Split Layout
+         ========================================================= -->
+    <section class="voter-view" id="verificationStep" aria-labelledby="voter-title">
+      <div class="voter-context" aria-hidden="true">
+        <div>
+          <div class="voter-eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Student Leadership Elections · 2026</span>
+          </div>
+          <h1 class="voter-headline">
+            Cast your<br>
+            <span class="italic">ballot</span> with<br>
+            confidence.
+          </h1>
+          <p class="voter-subline">
+            You are about to participate in the official KE0274 PEFA Mfangano CYDC Student Leadership Elections. Your vote will help shape the council that serves 378 students across our island community.
+          </p>
+        </div>
+
+        <div class="voter-principles">
+          <div class="voter-principle">
+            <div class="voter-principle-title">Secure</div>
+            <div class="voter-principle-desc">Authenticated by your unique KE number. One vote per student.</div>
+          </div>
+          <div class="voter-principle">
+            <div class="voter-principle-title">Anonymous</div>
+            <div class="voter-principle-desc">Your individual choices are encrypted and never tied to your identity.</div>
+          </div>
+          <div class="voter-principle">
+            <div class="voter-principle-title">Binding</div>
+            <div class="voter-principle-desc">Once submitted, your ballot cannot be altered. Review carefully.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voter-form-side">
+        <div class="voter-form-wrapper">
+          <div class="voter-form-head">
+            <div class="voter-form-label">Voter Authentication</div>
+            <h2 class="voter-form-title" id="voter-title">Verify your identity.</h2>
+            <p class="voter-form-subtitle">Enter your 3-digit KE number to begin casting your ballot. Your number is the same one assigned through the Compassion International program.</p>
+          </div>
+
+          <form id="verifyForm" onsubmit="event.preventDefault(); handleStart();">
+            <div class="form-group">
+              <label for="keInput" class="form-label">KE Number</label>
+              <div class="ke-input-wrap" id="keInputWrap">
+                <span class="ke-prefix">KE–</span>
+                <input
+                  type="text"
+                  id="keInput"
+                  class="ke-input"
+                  placeholder="000"
+                  maxlength="3"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  required
+                  aria-describedby="keHint">
+              </div>
+              <div class="form-hint" id="keHint">
+                <i class="fas fa-circle-info" aria-hidden="true"></i>
+                <span>Valid range: 001 — 550</span>
+              </div>
+              <div class="form-error" id="errorMsg" role="alert">
+                <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+                <span id="errorText"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="startBtn">
+              <i class="fas fa-check-to-slot" aria-hidden="true"></i>
+              <span>Begin Ballot</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </form>
+
+          <div class="voter-foot">
+            <a href="index.html" class="back-link">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              <span>Back to portal</span>
+            </a>
+            <div class="voter-hint">Encrypted · Local session</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VOTING VIEW — Ballot Interface
+         ========================================================= -->
+    <section class="voting-view hidden" id="votingStep" aria-labelledby="ballotTitle" aria-live="polite">
+
+      <!-- Progress strip -->
+      <div class="progress-strip" role="region" aria-label="Ballot progress">
+        <div class="progress-info">
+          <span class="progress-label">Position</span>
+          <div class="progress-value">
+            <span id="progressCurrent">1</span>
+            <span class="of">of</span>
+            <span id="progressTotal">10</span>
+          </div>
+        </div>
+        <div class="progress-track" id="progressTrack" aria-hidden="true">
+          <!-- Segments injected by JS -->
+        </div>
+        <div class="progress-ke">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Voter <span id="keDisplay">KE-000</span></span>
+        </div>
+      </div>
+
+      <!-- Ballot hero -->
+      <div class="ballot-hero">
+        <div>
+          <div class="ballot-eyebrow">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span id="postCounter">Position 1 of 10</span>
+          </div>
+          <h2 class="ballot-title" id="ballotTitle">
+            <span id="postTitle">President</span>
+          </h2>
+          <p class="ballot-subtitle">Select the candidate you believe should hold this office. You may review your choice before moving on.</p>
+        </div>
+        <div class="ballot-meta">
+          <div class="ballot-meta-row">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <span><span class="num">4</span> candidates</span>
+          </div>
+          <div class="ballot-meta-row">
+            <i class="fas fa-circle-check" aria-hidden="true"></i>
+            <span>Select one</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alert -->
+      <div class="alert" id="voteAlert" role="alert">
+        <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+        <span id="alertText"></span>
+      </div>
+
+      <!-- Candidates -->
+      <div class="candidates-grid" id="candidatesContainer" role="radiogroup" aria-labelledby="ballotTitle">
+        <!-- Injected by JS -->
+      </div>
+
+      <!-- Actions -->
+      <div class="ballot-actions">
+        <button class="btn-ghost" id="backBtn" disabled>
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>Previous</span>
+        </button>
+        <div></div>
+        <button class="btn-next" id="nextBtn">
+          <span id="nextBtnText">Next Position</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-icon" aria-hidden="true">
+        <i class="fas fa-check"></i>
+      </div>
+      <h3 class="modal-title" id="modalTitle">
+        Your ballot is <span class="italic">recorded.</span>
+      </h3>
+      <p class="modal-desc">
+        Thank you for participating in the KE0274 PEFA Mfangano CYDC Student Leadership Elections. Your voice has been added to the official count.
+      </p>
+
+      <div class="modal-receipt">
+        <div class="receipt-row">
+          <span class="receipt-label">Voter</span>
+          <span class="receipt-value" id="receiptKE">KE-000</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Positions Cast</span>
+          <span class="receipt-value"><span id="receiptCount">10</span> / 10</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Status</span>
+          <span class="receipt-value highlight">
+            <i class="fas fa-circle-check" aria-hidden="true" style="margin-right:4px"></i>Verified
+          </span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Timestamp</span>
+          <span class="receipt-value" id="receiptTime">—</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a href="index.html" class="btn-primary">
+          <i class="fas fa-home" aria-hidden="true"></i>
+          <span>Return to Portal</span>
+        </a>
+        <button class="btn-ghost" onclick="closeModal()" type="button">
+          <i class="fas fa-rotate" aria-hidden="true"></i>
+          <span>Cast Test Ballot</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script>
+// =====================
+// THEME TOGGLE
+// =====================
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('voterTheme') || 'dark';
+applyTheme(savedTheme);
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('voterTheme', theme);
+  const icon = themeToggle.querySelector('i');
+  icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+themeToggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// =====================
+// DATA CONFIGURATION
+// =====================
+const posts = [
+  { title: "President", icon: "fa-crown", candidates: ["Alex Otieno", "Brian Mwangi", "Cynthia Akinyi", "David Kiptoo"] },
+  { title: "Deputy President", icon: "fa-shield-halved", candidates: ["Faith Wanjiru", "George Odhiambo", "Hassan Ali", "Irene Chebet"] },
+  { title: "Secretary General", icon: "fa-file-signature", candidates: ["James Ouma", "Kevin Mutua", "Linda Njeri", "Mark Otieno"] },
+  { title: "Deputy Secretary", icon: "fa-pen-to-square", candidates: ["Nancy Jepkoech", "Oscar Kamau", "Pauline Auma", "Ronald Maina"] },
+  { title: "Treasurer", icon: "fa-coins", candidates: ["Sarah Atieno", "Thomas Kibet", "Umar Farah", "Vivian Wairimu"] },
+  { title: "Assistant Treasurer", icon: "fa-calculator", candidates: ["Wilson Omondi", "Xavier Mutiso", "Yvonne Chepngeno", "Zack Kariuki"] },
+  { title: "Academic Prefect", icon: "fa-graduation-cap", candidates: ["Ann Muthoni", "Brian Otieno", "Clara Jepchirchir", "Dennis Kimani"] },
+  { title: "Sports Captain", icon: "fa-futbol", candidates: ["Eric Kiprono", "Felix Ochieng", "Grace Naliaka", "Henry Mwenda"] },
+  { title: "Entertainment Captain", icon: "fa-music", candidates: ["Ivy Achieng", "Joel Barasa", "Kelly Wambui", "Lewis Ngugi"] },
+  { title: "ICT Representative", icon: "fa-laptop-code", candidates: ["Mike Otieno", "Naomi Wekesa", "Peter Kamande", "Queen Moraa"] }
+];
+
+// =====================
+// STATE & STORAGE
+// =====================
+let currentPost = 0;
+let userKE = null;
+let userVotes = {};
+
+const VOTES_KEY = "election_votes_2026";
+const VOTED_KEY = "election_voted_users_2026";
+
+let votesData = JSON.parse(localStorage.getItem(VOTES_KEY)) || {};
+let votedUsers = JSON.parse(localStorage.getItem(VOTED_KEY)) || [];
+
+// =====================
+// DOM REFS
+// =====================
+const keInput = document.getElementById("keInput");
+const keInputWrap = document.getElementById("keInputWrap");
+const startBtn = document.getElementById("startBtn");
+const verificationStep = document.getElementById("verificationStep");
+const votingStep = document.getElementById("votingStep");
+const postTitle = document.getElementById("postTitle");
+const postCounter = document.getElementById("postCounter");
+const progressCurrent = document.getElementById("progressCurrent");
+const progressTotal = document.getElementById("progressTotal");
+const progressTrack = document.getElementById("progressTrack");
+const keDisplay = document.getElementById("keDisplay");
+const candidatesContainer = document.getElementById("candidatesContainer");
+const nextBtn = document.getElementById("nextBtn");
+const nextBtnText = document.getElementById("nextBtnText");
+const backBtn = document.getElementById("backBtn");
+const voteAlert = document.getElementById("voteAlert");
+const alertText = document.getElementById("alertText");
+const successModal = document.getElementById("successModal");
+const errorBox = document.getElementById("errorMsg");
+const errorTextEl = document.getElementById("errorText");
+
+// =====================
+// UTILITIES
+// =====================
+function showError(msg) {
+  errorTextEl.textContent = msg;
+  errorBox.classList.add("visible");
+  keInputWrap.classList.add("error");
+  setTimeout(() => {
+    errorBox.classList.remove("visible");
+    keInputWrap.classList.remove("error");
+  }, 4000);
+}
+
+function showVoteAlert(msg) {
+  alertText.textContent = msg;
+  voteAlert.classList.add("show");
+  setTimeout(() => voteAlert.classList.remove("show"), 4000);
+}
+
+function getInitials(name) {
+  return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+}
+
+function buildProgressTrack() {
+  progressTrack.innerHTML = '';
+  for (let i = 0; i < posts.length; i++) {
+    const seg = document.createElement('div');
+    seg.className = 'progress-seg';
+    progressTrack.appendChild(seg);
+  }
+}
+
+function updateProgress() {
+  progressCurrent.textContent = currentPost + 1;
+  progressTotal.textContent = posts.length;
+  postCounter.textContent = `Position ${currentPost + 1} of ${posts.length}`;
+
+  const segments = progressTrack.querySelectorAll('.progress-seg');
+  segments.forEach((seg, i) => {
+    seg.classList.remove('complete', 'current');
+    if (i < currentPost) seg.classList.add('complete');
+    if (i === currentPost) seg.classList.add('current');
+  });
+}
+
+// =====================
+// LOAD CANDIDATES
+// =====================
+function loadCandidates() {
+  const post = posts[currentPost];
+  postTitle.textContent = post.title;
+  candidatesContainer.innerHTML = "";
+
+  // Restore prior selection if user went back
+  const prior = userVotes[post.title] || null;
+
+  post.candidates.forEach((name, index) => {
+    const isSelected = prior === name;
+    const card = document.createElement("label");
+    card.className = "candidate-card" + (isSelected ? " selected" : "");
+    card.setAttribute('role', 'radio');
+    card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+    card.setAttribute('tabindex', '0');
+
+    card.innerHTML = `
+      <input type="radio" name="candidate" value="${name}" id="c${index}" ${isSelected ? 'checked' : ''}>
+      <div class="candidate-avatar" aria-hidden="true">${getInitials(name)}</div>
+      <div class="candidate-info">
+        <div class="candidate-name">${name}</div>
+        <div class="candidate-sub">Candidate · ${post.title}</div>
+      </div>
+      <div class="candidate-check" aria-hidden="true"><i class="fas fa-check"></i></div>
+    `;
+
+    const radio = card.querySelector("input");
+    radio.addEventListener("change", () => {
+      document.querySelectorAll('.candidate-card').forEach(c => {
+        c.classList.remove('selected');
+        c.setAttribute('aria-checked', 'false');
+      });
+      if (radio.checked) {
+        card.classList.add('selected');
+        card.setAttribute('aria-checked', 'true');
+        userVotes[post.title] = name;
+      }
+    });
+
+    card.addEventListener("click", (e) => {
+      if (e.target.tagName !== "INPUT") {
+        radio.checked = true;
+        radio.dispatchEvent(new Event("change"));
+      }
+    });
+
+    card.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Enter") {
+        e.preventDefault();
+        radio.checked = true;
+        radio.dispatchEvent(new Event("change"));
+      }
+    });
+
+    candidatesContainer.appendChild(card);
+  });
+
+  updateProgress();
+  backBtn.disabled = currentPost === 0;
+
+  if (currentPost === posts.length - 1) {
+    nextBtnText.textContent = "Submit Ballot";
+    nextBtn.classList.add('btn-submit');
+    nextBtn.classList.remove('btn-next');
+    nextBtn.innerHTML = `<i class="fas fa-paper-plane" aria-hidden="true"></i> <span>${nextBtnText.textContent}</span>`;
+  } else {
+    nextBtnText.textContent = "Next Position";
+    nextBtn.classList.remove('btn-submit');
+    nextBtn.classList.add('btn-next');
+    nextBtn.innerHTML = `<span>${nextBtnText.textContent}</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>`;
+  }
+}
+
+// =====================
+// START VOTING
+// =====================
+function handleStart() {
+  const ke = keInput.value.trim();
+  if (!/^\d{3}$/.test(ke)) { showError("KE number must be 3 digits."); return; }
+  const keNum = parseInt(ke, 10);
+  if (keNum < 1 || keNum > 550) { showError("KE number must be between 001 and 550."); return; }
+  if (votedUsers.includes(ke)) { showError("This KE number has already voted. Each student may cast only one ballot."); return; }
+
+  userKE = ke;
+  keDisplay.textContent = `KE-${ke}`;
+  document.getElementById('receiptKE').textContent = `KE-${ke}`;
+  verificationStep.classList.add("hidden");
+  votingStep.classList.remove("hidden");
+  buildProgressTrack();
+  loadCandidates();
+  votingStep.scrollIntoView({ behavior: 'smooth' });
+}
+
+// =====================
+// NAVIGATION
+// =====================
+backBtn.addEventListener("click", () => {
+  if (currentPost > 0) {
+    currentPost--;
+    loadCandidates();
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  const post = posts[currentPost];
+  const selected = document.querySelector('input[name="candidate"]:checked');
+  if (!selected) {
+    showVoteAlert(`Please select a candidate for ${post.title} before continuing.`);
+    return;
+  }
+
+  userVotes[post.title] = selected.value;
+
+  if (currentPost < posts.length - 1) {
+    currentPost++;
+    loadCandidates();
+    votingStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    submitVotes();
+  }
+});
+
+// =====================
+// SUBMIT VOTES
+// =====================
+function submitVotes() {
+  Object.entries(userVotes).forEach(([position, candidate]) => {
+    if (!votesData[position]) votesData[position] = {};
+    if (!votesData[position][candidate]) votesData[position][candidate] = 0;
+    votesData[position][candidate]++;
+  });
+
+  localStorage.setItem(VOTES_KEY, JSON.stringify(votesData));
+  votedUsers.push(userKE);
+  localStorage.setItem(VOTED_KEY, JSON.stringify(votedUsers));
+
+  // Populate receipt
+  document.getElementById('receiptCount').textContent = Object.keys(userVotes).length;
+  document.getElementById('receiptTime').textContent = new Date().toLocaleString('en-US', {
+    month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+  });
+
+  successModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  successModal.classList.remove("active");
+  document.body.style.overflow = "";
+  location.reload();
+}
+
+// =====================
+// INPUT HANDLING
+// =====================
+keInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") { e.preventDefault(); handleStart(); }
+});
+keInput.addEventListener("input", (e) => {
+  e.target.value = e.target.value.replace(/[^0-9]/g, '');
+});
+
+window.addEventListener("load", () => {
+  setTimeout(() => keInput.focus(), 300);
+});
+
+// Close modal on escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && successModal.classList.contains('active')) {
+    closeModal();
+  }
+});
+</script>
+</body>
+</html>

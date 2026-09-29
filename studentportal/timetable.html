@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Timetable | Student Portal | KE0274 PEFA Mfangano CYDC</title>
+<meta name="description" content="View the Saturday program timetable, skills sessions, and class assignments for participants at KE0274 PEFA Mfangano Child Development Centre."/>
+<meta name="theme-color" content="#0B1B33"/>
+<meta property="og:title" content="Timetable | Student Portal | KE0274 PEFA Mfangano CYDC"/>
+<meta property="og:description" content="Saturday schedule — academic sessions, skills development & spiritual formation."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+:root{
+  --blue-950:#020814;--blue-900:#0A1628;--blue-800:#132E55;--blue-700:#1A3F73;--blue-600:#1E4FD8;--blue-500:#2563EB;--blue-400:#3B82F6;--blue-300:#60A5FA;--blue-100:#BFDBFE;--blue-50:#EFF6FF;
+  --sky-500:#0EA5E9;--sky-400:#38BDF8;--sky-300:#7DD3FC;--sky-100:#E0F2FE;
+  --amber-600:#D97706;--amber-500:#F59E0B;--amber-400:#FBBF24;--amber-300:#FCD34D;--amber-200:#FDE68A;--amber-100:#FEF3C7;--gold-400:#FACC15;
+  --forest-600:#1e6b3a;--forest-500:#2d8a4e;--terra-500:#a8553c;--purple-500:#8b5cf6;--pink-500:#ec4899;
+  --stone-700:#44403C;--stone-500:#78716C;--stone-400:#A8A29E;--ivory:#FDFCF8;--pearl:#F8F6F1;
+  --bg-page:var(--ivory);--bg-surface:#fff;--bg-muted:var(--pearl);--bg-glass:rgba(255,255,255,.72);
+  --text-primary:var(--blue-950);--text-secondary:var(--stone-700);--text-tertiary:var(--stone-500);--text-quaternary:var(--stone-400);--text-accent:var(--blue-600);
+  --border-hairline:rgba(12,27,51,.05);--border-subtle:rgba(12,27,51,.09);--border-default:rgba(12,27,51,.14);
+  --gradient-hero:linear-gradient(135deg,var(--blue-950) 0%,var(--blue-900) 40%,var(--blue-800) 100%);
+  --gradient-royal:linear-gradient(135deg,var(--blue-700),var(--blue-600));
+  --gradient-warm:linear-gradient(135deg,var(--amber-600) 0%,var(--amber-400) 55%,var(--gold-400) 100%);
+  --gradient-gold:linear-gradient(135deg,var(--gold-400),var(--amber-300));
+  --gradient-mesh:radial-gradient(at 15% 20%,rgba(59,130,246,.12) 0%,transparent 45%),radial-gradient(at 85% 10%,rgba(14,165,233,.10) 0%,transparent 45%),radial-gradient(at 75% 85%,rgba(245,158,11,.09) 0%,transparent 50%),radial-gradient(at 10% 90%,rgba(30,79,216,.07) 0%,transparent 45%);
+  --shadow-sm:0 1px 2px rgba(11,27,51,.05),0 2px 6px rgba(11,27,51,.05);
+  --shadow-md:0 4px 10px -2px rgba(11,27,51,.07),0 10px 24px -6px rgba(11,27,51,.10);
+  --shadow-lg:0 10px 20px -6px rgba(11,27,51,.10),0 24px 48px -12px rgba(11,27,51,.14);
+  --shadow-xl:0 18px 36px -10px rgba(11,27,51,.14),0 40px 80px -20px rgba(11,27,51,.20);
+  --shadow-2xl:0 28px 56px -14px rgba(11,27,51,.20),0 56px 112px -28px rgba(11,27,51,.30);
+  --shadow-blue:0 16px 32px -8px rgba(30,79,216,.35);--shadow-gold:0 14px 28px -8px rgba(245,158,11,.38);
+  --inset-light:inset 0 1px 0 rgba(255,255,255,.8);--inset-glass:inset 0 1px 0 rgba(255,255,255,.12);
+  --font-display:'Fraunces',Georgia,serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --track-tight:-.03em;--track-tighter:-.045em;--track-wide:.06em;--track-wider:.14em;--track-widest:.22em;
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;--r-2xl:32px;--r-3xl:40px;--r-full:9999px;
+  --ease-expo:cubic-bezier(.16,1,.3,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:180ms;--dur-base:360ms;--dur-slow:640ms;--dur-cine:1200ms;
+  --sidebar-w:300px;--container:1320px;--container-wide:1520px;--bar-h:64px;--gap:clamp(1rem,1.6vw,1.5rem);
+}
+[data-theme="dark"]{
+  --bg-page:#030812;--bg-surface:#081122;--bg-muted:#050C1A;--bg-glass:rgba(9,18,34,.78);
+  --text-primary:#F5F7FA;--text-secondary:#B8C5D9;--text-tertiary:#7A8BA3;--text-quaternary:#5A6B80;--text-accent:var(--sky-400);
+  --border-hairline:rgba(255,255,255,.05);--border-subtle:rgba(255,255,255,.09);--border-default:rgba(255,255,255,.14);
+  --gradient-hero:linear-gradient(135deg,#010409 0%,#040A17 40%,#081325 100%);
+  --gradient-mesh:radial-gradient(at 15% 20%,rgba(59,130,246,.22) 0%,transparent 45%),radial-gradient(at 85% 10%,rgba(14,165,233,.16) 0%,transparent 45%),radial-gradient(at 75% 85%,rgba(245,158,11,.10) 0%,transparent 50%);
+  --shadow-sm:0 2px 6px rgba(0,0,0,.35);--shadow-md:0 8px 20px rgba(0,0,0,.45);--shadow-lg:0 16px 36px rgba(0,0,0,.5);--shadow-xl:0 28px 60px rgba(0,0,0,.55);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+body{font-family:var(--font-body);font-size:1rem;line-height:1.65;color:var(--text-primary);background:var(--bg-page);overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;transition:background-color .8s var(--ease-expo),color .4s var(--ease-expo);font-feature-settings:"cv02","cv03","cv04","cv11"}
+body.nav-locked{overflow:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+button{cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--blue-600);color:#fff}
+:focus-visible{outline:2px solid var(--blue-500);outline-offset:3px;border-radius:var(--r-sm)}
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--blue-900);color:#fff;padding:.75rem 1.25rem;border-radius:var(--r-md);font-weight:600;font-size:.875rem;z-index:10000;transition:top .2s}
+.skip-link:focus{top:1rem}
+
+/* ============ CHROME ============ */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1200;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--blue-600),var(--sky-400),var(--amber-400));pointer-events:none}
+.ambient-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.ambient-bg::before{content:'';position:absolute;inset:0;background:var(--gradient-mesh);opacity:.85}
+.orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5;animation:orbFloat 32s ease-in-out infinite;will-change:transform;mix-blend-mode:screen}
+[data-theme="dark"] .orb{mix-blend-mode:normal;opacity:.35}
+.orb-1{width:min(620px,70vw);height:min(620px,70vw);background:radial-gradient(circle,var(--blue-400),transparent 70%);top:-15%;left:-12%}
+.orb-2{width:min(480px,60vw);height:min(480px,60vw);background:radial-gradient(circle,var(--sky-400),transparent 70%);top:35%;right:-12%;animation-delay:-11s}
+.orb-3{width:min(520px,60vw);height:min(520px,60vw);background:radial-gradient(circle,var(--amber-300),transparent 70%);bottom:-15%;left:25%;opacity:.25;animation-delay:-22s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.08)}66%{transform:translate(-40px,50px) scale(.95)}}
+.noise-overlay{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.025;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;border-radius:50%;z-index:9999;mix-blend-mode:difference;transition:width .3s var(--ease-expo),height .3s var(--ease-expo),border-color .3s,background .3s,opacity .3s}
+.cursor-dot{width:6px;height:6px;background:var(--blue-600)}
+.cursor-ring{width:34px;height:34px;border:1px solid var(--blue-600);opacity:.55}
+body.cursor-hover .cursor-dot{width:10px;height:10px;background:var(--amber-400)}
+body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-400);opacity:.35}
+@media(hover:none),(max-width:1024px){.cursor-dot,.cursor-ring{display:none!important}}
+.page-loader{position:fixed;inset:0;z-index:10001;background:var(--blue-950);display:grid;place-items:center;transition:opacity .7s var(--ease-expo),visibility .7s}
+.page-loader.hidden{opacity:0;visibility:hidden}
+.loader-logo{width:56px;height:56px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--blue-600),var(--blue-800));display:grid;place-items:center;color:var(--amber-400);font-size:1.3rem;animation:loaderPulse 1.6s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{transform:scale(1);box-shadow:0 0 56px rgba(30,79,216,.6)}50%{transform:scale(1.06);box-shadow:0 0 88px rgba(245,158,11,.5)}}
+
+/* ============ MOBILE BAR / SIDEBAR ============ */
+.mobile-bar{position:fixed;top:0;left:0;right:0;height:calc(var(--bar-h) + env(safe-area-inset-top));padding-top:env(safe-area-inset-top);z-index:1001;display:none;align-items:center;justify-content:space-between;padding-left:clamp(.9rem,4vw,1.25rem);padding-right:clamp(.9rem,4vw,1.25rem);background:var(--bg-glass);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border-hairline)}
+.mobile-logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.92rem;letter-spacing:-.01em}
+.mobile-logo .mark{width:38px;height:38px;border-radius:10px;background:var(--gradient-hero);color:var(--amber-400);display:grid;place-items:center;font-size:.95rem;box-shadow:var(--shadow-md),var(--inset-glass)}
+.mobile-toggle{width:46px;height:46px;border-radius:var(--r-md);background:var(--bg-muted);border:1px solid var(--border-subtle);display:grid;place-items:center;font-size:1.05rem;color:var(--text-primary);transition:transform .15s}
+.mobile-toggle:active{transform:scale(.92)}
+.nav-backdrop{position:fixed;inset:0;z-index:999;background:rgba(2,8,20,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .45s var(--ease-expo)}
+.nav-backdrop.show{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;left:0;top:0;height:100vh;height:100dvh;width:var(--sidebar-w);background:var(--bg-glass);backdrop-filter:blur(32px) saturate(200%);-webkit-backdrop-filter:blur(32px) saturate(200%);border-right:1px solid var(--border-hairline);padding:2rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom));z-index:1000;display:flex;flex-direction:column;overflow:hidden;transition:transform .55s var(--ease-expo)}
+.sidebar::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,.35),transparent)}
+.sidebar-header{padding-bottom:1.4rem;margin-bottom:1.4rem;border-bottom:1px solid var(--border-hairline);flex-shrink:0}
+.sidebar-logo{display:flex;align-items:center;gap:.75rem}
+.sidebar-logo-mark{width:44px;height:44px;border-radius:var(--r-md);background:var(--gradient-hero);display:grid;place-items:center;color:var(--amber-400);font-size:1.05rem;flex-shrink:0;box-shadow:var(--shadow-md),var(--inset-glass);position:relative;overflow:hidden}
+.sidebar-logo-mark::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.18),transparent 60%)}
+.sidebar-logo-text{display:flex;flex-direction:column;line-height:1.2}
+.sidebar-logo-title{font-size:.95rem;font-weight:700;letter-spacing:-.02em}
+.sidebar-logo-sub{font-size:.63rem;color:var(--text-tertiary);font-weight:600;letter-spacing:var(--track-wider);text-transform:uppercase;margin-top:2px}
+.sidebar-nav{flex:1;display:flex;flex-direction:column;gap:1.6rem;overflow-y:auto;scrollbar-width:thin;padding-right:2px;overscroll-behavior:contain}
+.nav-section-title{color:var(--text-quaternary);font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:var(--track-widest);margin-bottom:.7rem;padding-left:.75rem}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:11px .75rem;min-height:44px;color:var(--text-secondary);border-radius:var(--r-md);transition:all .2s var(--ease-expo);font-size:.875rem;font-weight:500;cursor:pointer}
+.nav-link:hover{background:var(--bg-muted);color:var(--text-primary)}
+.nav-link.active{background:var(--blue-900);color:#fff;box-shadow:var(--shadow-md),var(--inset-glass)}
+[data-theme="dark"] .nav-link.active{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));box-shadow:var(--shadow-blue)}
+.nav-link-left{display:flex;align-items:center;gap:.75rem}
+.nav-link i.nav-icon{font-size:.95rem;width:18px;text-align:center;opacity:.85}
+.dropdown-arrow{font-size:.62rem;transition:transform .25s var(--ease-expo);color:var(--text-quaternary)}
+.nav-item.active .dropdown-arrow{transform:rotate(180deg);color:var(--amber-400)}
+.dropdown{margin:2px 0 0 1.75rem;padding-left:1rem;border-left:1px solid var(--border-subtle);max-height:0;overflow:hidden;transition:max-height .4s var(--ease-expo)}
+.nav-item.active .dropdown{max-height:400px}
+.dropdown-link{display:flex;align-items:center;gap:.75rem;padding:10px .75rem;min-height:40px;color:var(--text-tertiary);font-size:.825rem;font-weight:500;border-radius:var(--r-sm);transition:all .2s}
+.dropdown-link:hover{color:var(--text-primary);background:var(--bg-muted);padding-left:1rem}
+.dropdown-link.active{color:var(--blue-600);background:var(--blue-50);font-weight:600}
+[data-theme="dark"] .dropdown-link.active{color:var(--sky-400);background:rgba(30,79,216,.15)}
+.dropdown-link i{font-size:.72rem;width:14px;color:var(--blue-500)}
+.sidebar-footer{margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--border-hairline);flex-shrink:0}
+.theme-toggle{width:100%;padding:11px;background:var(--bg-muted);border:1px solid var(--border-subtle);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.825rem;font-weight:600;transition:all .2s;min-height:44px}
+.theme-toggle:hover{background:var(--blue-900);color:#fff;border-color:var(--blue-900)}
+.main-content{margin-left:var(--sidebar-w);position:relative;z-index:2;transition:margin-left .5s var(--ease-expo)}
+
+/* ============ PAGE HERO ============ */
+.page-hero{position:relative;min-height:92vh;min-height:92dvh;display:flex;align-items:center;padding:clamp(6.5rem,12vh,10rem) clamp(1.25rem,4vw,3rem) clamp(5rem,10vh,7rem);overflow:hidden;isolation:isolate;color:#fff}
+.hero-bg{position:absolute;inset:0;z-index:-3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.08);transition:transform 22s cubic-bezier(.3,0,.3,1);will-change:transform}
+.page-hero.in-view .hero-bg img{transform:scale(1)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(2,8,20,.94) 0%,rgba(10,22,40,.82) 40%,rgba(19,46,85,.66) 100%),linear-gradient(180deg,transparent 30%,rgba(2,8,20,.92) 100%);z-index:1}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 85%,rgba(245,158,11,.22) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(59,130,246,.28) 0%,transparent 55%);z-index:2}
+.hero-grid-pattern{position:absolute;inset:0;z-index:-1;opacity:.06;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at center,black 10%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse at center,black 10%,transparent 80%)}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:var(--container-wide);margin:0 auto;display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2.5rem,4vw,4rem);align-items:center}
+.hero-content>*{opacity:0;transform:translateY(36px)}
+.hero-content.loaded>*{animation:heroReveal 1.2s var(--ease-expo) forwards}
+.hero-content.loaded>:nth-child(1){animation-delay:.1s}
+.hero-content.loaded>:nth-child(2){animation-delay:.28s}
+.hero-content.loaded>:nth-child(3){animation-delay:.48s}
+.hero-content.loaded>:nth-child(4){animation-delay:.66s}
+.hero-content.loaded>:nth-child(5){animation-delay:.84s}
+@keyframes heroReveal{to{opacity:1;transform:translateY(0)}}
+.hero-breadcrumb{display:inline-flex;align-items:center;gap:.55rem;padding:6px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--r-full);font-family:var(--font-mono);font-size:.68rem;font-weight:500;letter-spacing:var(--track-wide);color:rgba(255,255,255,.78);margin-bottom:2rem;backdrop-filter:blur(14px);box-shadow:var(--inset-glass)}
+.hero-breadcrumb i{color:var(--amber-400);font-size:.65rem}
+.hero-breadcrumb .sep{opacity:.35}
+.hero-breadcrumb .current{color:var(--amber-300)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.75rem;padding:8px 16px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.28);border-radius:var(--r-full);font-size:.7rem;font-weight:600;letter-spacing:var(--track-wider);text-transform:uppercase;color:var(--amber-300);margin-bottom:2rem;backdrop-filter:blur(14px);box-shadow:var(--inset-glass)}
+.hero-eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--amber-400);animation:pulseRing 2.4s ease-out infinite}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(251,191,36,.7)}70%{box-shadow:0 0 0 12px rgba(251,191,36,0)}100%{box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.4rem,6.5vw,5.5rem);font-weight:400;line-height:1.02;letter-spacing:var(--track-tighter);margin-bottom:2rem;font-variation-settings:"opsz" 144}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .line-inner{display:block;transform:translateY(110%);animation:lineReveal 1.2s var(--ease-expo) forwards;animation-play-state:paused}
+.hero-content.loaded .line-inner{animation-play-state:running}
+.hero-content.loaded .line:nth-child(1) .line-inner{animation-delay:.3s}
+.hero-content.loaded .line:nth-child(2) .line-inner{animation-delay:.48s}
+.hero-content.loaded .line:nth-child(3) .line-inner{animation-delay:.66s}
+@keyframes lineReveal{to{transform:translateY(0)}}
+.hero-title .italic{font-style:italic;font-weight:300;background:linear-gradient(135deg,var(--amber-200),var(--amber-400));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-title .divider{display:inline-block;width:56px;height:2px;background:linear-gradient(90deg,var(--amber-400),transparent);margin:1.1rem .7rem 0 0;vertical-align:middle;border-radius:1px}
+.hero-subtitle{font-size:clamp(1rem,1.4vw,1.125rem);color:rgba(255,255,255,.82);max-width:560px;line-height:1.75;margin-bottom:0}
+
+.hero-visual{opacity:0;transform:translateY(36px);transition:all 1.2s var(--ease-expo) .55s}
+.hero-visual.loaded{opacity:1;transform:none}
+.hero-stats-card{background:rgba(255,255,255,.08);backdrop-filter:blur(30px) saturate(190%);-webkit-backdrop-filter:blur(30px) saturate(190%);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-3xl);padding:clamp(1.5rem,3vw,2.5rem);box-shadow:var(--shadow-2xl),var(--inset-glass);position:relative;overflow:hidden;transition:transform .5s var(--ease-expo)}
+.hero-stats-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent)}
+.hero-stats-card::after{content:'';position:absolute;top:-50%;right:-20%;width:380px;height:380px;background:radial-gradient(circle,rgba(245,158,11,.18),transparent 70%);pointer-events:none}
+.stats-card-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.8rem;padding-bottom:1.4rem;border-bottom:1px solid rgba(255,255,255,.12);position:relative;z-index:1}
+.stats-card-title{font-family:var(--font-display);font-size:1.25rem;font-weight:500;letter-spacing:-.02em}
+.stats-card-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.35);border-radius:var(--r-full);font-size:.68rem;font-weight:600;color:var(--amber-300);letter-spacing:var(--track-wide)}
+.stats-card-badge i{font-size:.5rem;animation:pulseRing 2.4s ease-out infinite}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.75rem,1.5vw,1.25rem);position:relative;z-index:1}
+.stat-item{padding:clamp(1rem,2vw,1.25rem);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);transition:all .35s var(--ease-expo)}
+.stat-item:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.stat-icon{width:36px;height:36px;border-radius:var(--r-md);background:linear-gradient(135deg,rgba(59,130,246,.25),rgba(14,165,233,.2));border:1px solid rgba(59,130,246,.35);display:grid;place-items:center;color:var(--sky-300);font-size:.9rem;margin-bottom:.7rem}
+.stat-number{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.25rem);font-weight:500;color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:4px;font-variation-settings:"opsz" 144}
+.stat-label{font-size:.68rem;color:rgba(255,255,255,.62);font-weight:600;letter-spacing:var(--track-wide);text-transform:uppercase}
+
+.scroll-indicator-hero{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.5);font-size:.66rem;letter-spacing:var(--track-widest);text-transform:uppercase;font-weight:500;z-index:3}
+.scroll-indicator-hero::after{content:'';width:1px;height:40px;background:linear-gradient(180deg,rgba(251,191,36,.8),transparent);animation:scrollLine 2.4s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ SECTIONS ============ */
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 clamp(1.25rem,4vw,2rem);position:relative}
+.section{padding:clamp(4.5rem,9vw,8rem) 0;position:relative}
+.section-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.68rem;font-weight:700;letter-spacing:var(--track-widest);text-transform:uppercase;color:var(--blue-600);margin-bottom:1.4rem}
+[data-theme="dark"] .section-eyebrow{color:var(--sky-400)}
+.section-eyebrow::before{content:'';width:32px;height:1px;background:currentColor}
+.section-title{font-family:var(--font-display);font-size:clamp(1.9rem,4.6vw,3.75rem);font-weight:400;line-height:1.06;letter-spacing:var(--track-tighter);margin-bottom:1.4rem;font-variation-settings:"opsz" 144;max-width:920px}
+.section-title .italic{font-style:italic;font-weight:300;background:linear-gradient(135deg,var(--blue-600),var(--sky-400));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+[data-theme="dark"] .section-title .italic{background:linear-gradient(135deg,var(--sky-300),var(--amber-300));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section-lede{font-size:clamp(.98rem,1.4vw,1.0625rem);color:var(--text-secondary);line-height:1.75;max-width:720px;margin-bottom:clamp(2.5rem,5vw,4rem)}
+
+.section.alt-bg{background:linear-gradient(180deg,var(--bg-muted) 0%,var(--bg-page) 100%)}
+.section.alt-bg::before{content:'';position:absolute;inset:0;background:var(--gradient-mesh);opacity:.3;pointer-events:none}
+.section.alt-bg>*{position:relative;z-index:1}
+
+/* ============ TIMETABLE CARD ============ */
+.timetable-card{background:var(--bg-surface);border:1px solid var(--border-hairline);border-radius:var(--r-3xl);padding:clamp(1.75rem,3vw,2.5rem);box-shadow:var(--shadow-lg);position:relative;overflow:hidden;transition:all .4s var(--ease-expo)}
+.timetable-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-600),var(--sky-400),var(--amber-400))}
+.timetable-card:hover{box-shadow:var(--shadow-xl);border-color:var(--border-default)}
+.timetable-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.timetable-header h3{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--text-primary);display:flex;align-items:center;gap:.75rem;letter-spacing:-.01em}
+.timetable-header h3 i{color:var(--blue-600)}
+[data-theme="dark"] .timetable-header h3 i{color:var(--sky-400)}
+.timetable-subtitle{font-size:.875rem;color:var(--text-tertiary);font-weight:500;font-family:var(--font-mono);letter-spacing:.02em}
+
+.filter-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding:.5rem;background:var(--bg-muted);border-radius:var(--r-full);border:1px solid var(--border-hairline);width:fit-content}
+.filter-tab{padding:8px 16px;background:transparent;border:none;border-radius:var(--r-full);font-weight:600;font-size:.8rem;color:var(--text-tertiary);cursor:pointer;transition:all .2s var(--ease-expo);display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.filter-tab:hover{color:var(--text-primary);background:var(--bg-surface)}
+.filter-tab.active{background:var(--blue-900);color:#fff;box-shadow:var(--shadow-sm)}
+[data-theme="dark"] .filter-tab.active{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));box-shadow:var(--shadow-blue)}
+.filter-tab i{font-size:.75rem}
+
+.table-container{overflow-x:auto;border-radius:var(--r-xl);border:1px solid var(--border-hairline);margin-bottom:1.5rem;background:var(--bg-surface)}
+.timetable-table{width:100%;border-collapse:collapse;min-width:700px;font-size:.9rem}
+.timetable-table th{background:var(--gradient-hero);color:#fff;font-weight:600;padding:1rem 1.25rem;text-align:left;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;position:sticky;top:0;z-index:5}
+.timetable-table th i{margin-right:6px;color:var(--amber-400)}
+.timetable-table td{padding:1rem 1.25rem;border-bottom:1px solid var(--border-hairline);color:var(--text-secondary);transition:all .2s;vertical-align:middle}
+.timetable-table tr{transition:all .2s;cursor:pointer}
+.timetable-table tbody tr:hover{background:var(--blue-50)}
+[data-theme="dark"] .timetable-table tbody tr:hover{background:rgba(59,130,246,.08)}
+.timetable-table tr.selected{background:linear-gradient(90deg,rgba(251,191,36,.08),rgba(245,158,11,.04));border-left:3px solid var(--amber-500)}
+.timetable-table tr.hidden-row{display:none}
+.time-col{font-family:var(--font-mono);font-weight:500;color:var(--blue-600)!important;white-space:nowrap;min-width:160px;font-size:.85rem}
+[data-theme="dark"] .time-col{color:var(--sky-400)!important}
+
+.activity-badge{display:inline-block;padding:3px 10px;border-radius:var(--r-full);font-size:.68rem;font-weight:700;margin-left:8px;vertical-align:middle;letter-spacing:.04em;text-transform:uppercase}
+.badge-academic{background:var(--blue-50);color:var(--blue-700);border:1px solid var(--blue-100)}
+[data-theme="dark"] .badge-academic{background:rgba(30,79,216,.15);color:var(--sky-400);border-color:rgba(59,130,246,.3)}
+.badge-skills{background:rgba(251,191,36,.1);color:var(--amber-600);border:1px solid rgba(251,191,36,.25)}
+[data-theme="dark"] .badge-skills{background:rgba(251,191,36,.12);color:var(--amber-300)}
+.badge-spiritual{background:rgba(139,92,246,.08);color:var(--purple-500);border:1px solid rgba(139,92,246,.2)}
+[data-theme="dark"] .badge-spiritual{background:rgba(139,92,246,.15);color:#c084fc}
+.badge-break{background:rgba(45,138,78,.08);color:var(--forest-600);border:1px solid rgba(45,138,78,.2)}
+[data-theme="dark"] .badge-break{background:rgba(45,138,78,.15);color:#4ade80}
+.badge-service{background:rgba(168,85,60,.08);color:var(--terra-500);border:1px solid rgba(168,85,60,.2)}
+[data-theme="dark"] .badge-service{background:rgba(168,85,60,.15);color:#fb923c}
+
+.row-details{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-expo),padding .4s var(--ease-expo);background:var(--bg-muted)}
+.row-details.expanded{max-height:200px;padding:1rem 1.25rem}
+.row-details-content{display:flex;gap:1rem;flex-wrap:wrap;font-size:.875rem;color:var(--text-secondary)}
+.detail-item{display:flex;align-items:center;gap:6px}
+.detail-item i{color:var(--amber-500)}
+
+.timetable-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:14px 26px;border-radius:var(--r-full);font-weight:600;font-size:.925rem;transition:all .25s var(--ease-expo);border:1px solid transparent;min-height:52px;white-space:nowrap}
+.btn-primary{background:var(--blue-900);color:#fff;box-shadow:var(--shadow-md)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);background:var(--blue-800)}
+.btn-outline{background:transparent;border:1px solid var(--border-default);color:var(--text-primary)}
+.btn-outline:hover{background:var(--bg-muted);border-color:var(--blue-600);color:var(--blue-600);transform:translateY(-2px)}
+[data-theme="dark"] .btn-outline:hover{color:var(--sky-400);border-color:var(--sky-400)}
+
+/* ============ PROGRAMS / SKILLS / TEACHERS ============ */
+.programs-grid,.skills-grid,.teachers-grid{display:grid;gap:var(--gap)}
+.programs-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.program-card{background:var(--bg-surface);border:1px solid var(--border-hairline);border-radius:var(--r-2xl);padding:2rem;position:relative;overflow:hidden;transition:all .4s var(--ease-expo);box-shadow:var(--shadow-sm)}
+.program-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-accent,var(--gradient-royal));transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease-expo)}
+.program-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--border-default)}
+.program-card:hover::before{transform:scaleX(1)}
+.program-card:nth-child(1){--card-accent:linear-gradient(135deg,var(--amber-500),var(--amber-400))}
+.program-card:nth-child(2){--card-accent:linear-gradient(135deg,var(--terra-500),#fb923c)}
+.program-card:nth-child(3){--card-accent:linear-gradient(135deg,var(--purple-500),#a855f7)}
+.program-card:nth-child(4){--card-accent:linear-gradient(135deg,var(--sky-500),var(--blue-400))}
+.program-week{display:inline-block;padding:4px 12px;background:var(--card-accent,var(--gradient-royal));color:#fff;border-radius:var(--r-full);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+.program-icon{width:52px;height:52px;border-radius:var(--r-lg);background:linear-gradient(135deg,var(--blue-50),var(--sky-100));color:var(--blue-700);display:grid;place-items:center;font-size:1.3rem;margin-bottom:1rem;transition:transform .4s var(--ease-spring)}
+.program-card:hover .program-icon{transform:scale(1.08) rotate(-4deg)}
+[data-theme="dark"] .program-icon{background:linear-gradient(135deg,rgba(30,79,216,.15),rgba(14,165,233,.1));color:var(--sky-400)}
+.program-card h4{font-family:var(--font-display);font-size:1.125rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;letter-spacing:-.01em}
+.program-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.7}
+
+.skills-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.skill-card{background:var(--bg-surface);border:1px solid var(--border-hairline);border-radius:var(--r-2xl);padding:2rem;position:relative;overflow:hidden;transition:all .4s var(--ease-expo);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:flex-start}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-accent,var(--gradient-royal));transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease-expo)}
+.skill-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--border-default)}
+.skill-card:hover::before{transform:scaleX(1)}
+.skill-card:nth-child(1){--card-accent:linear-gradient(135deg,var(--blue-600),var(--sky-500))}
+.skill-card:nth-child(2){--card-accent:linear-gradient(135deg,var(--pink-500),#f43f5e)}
+.skill-card:nth-child(3){--card-accent:linear-gradient(135deg,var(--amber-500),#ef4444)}
+.skill-card:nth-child(4){--card-accent:linear-gradient(135deg,var(--purple-500),var(--pink-500))}
+.skill-card:nth-child(5){--card-accent:linear-gradient(135deg,var(--forest-500),var(--sky-500))}
+.skill-card:nth-child(6){--card-accent:linear-gradient(135deg,#f97316,var(--amber-500))}
+.skill-card:nth-child(7){--card-accent:linear-gradient(135deg,var(--sky-500),var(--blue-600))}
+.skill-card:nth-child(8){--card-accent:linear-gradient(135deg,#ef4444,#f97316)}
+.skill-icon{width:56px;height:56px;border-radius:var(--r-lg);background:linear-gradient(135deg,var(--blue-50),var(--sky-100));color:var(--blue-700);display:grid;place-items:center;font-size:1.4rem;margin-bottom:1rem;transition:transform .4s var(--ease-spring)}
+.skill-card:hover .skill-icon{transform:scale(1.08) rotate(-4deg)}
+[data-theme="dark"] .skill-icon{background:linear-gradient(135deg,rgba(30,79,216,.15),rgba(14,165,233,.1));color:var(--sky-400)}
+.skill-card h4{font-family:var(--font-display);font-size:1.125rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;letter-spacing:-.01em}
+.skill-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.65;margin-bottom:1rem;flex-grow:1}
+.teacher-profile{display:flex;align-items:center;gap:.75rem;padding:8px 14px;background:var(--bg-muted);border:1px solid var(--border-hairline);border-radius:var(--r-full);margin-top:auto;transition:all .2s}
+.skill-card:hover .teacher-profile{background:var(--blue-50);border-color:var(--blue-100)}
+[data-theme="dark"] .skill-card:hover .teacher-profile{background:rgba(30,79,216,.12);border-color:rgba(59,130,246,.25)}
+.teacher-avatar{width:32px;height:32px;border-radius:50%;background:var(--gradient-royal);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.75rem;flex-shrink:0}
+.teacher-name{font-weight:600;font-size:.825rem;color:var(--text-primary)}
+
+.teachers-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.teacher-card{background:var(--bg-surface);border:1px solid var(--border-hairline);border-radius:var(--r-2xl);padding:2rem 1.5rem;text-align:center;position:relative;overflow:hidden;transition:all .4s var(--ease-expo);box-shadow:var(--shadow-sm)}
+.teacher-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-accent,var(--gradient-royal));transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease-expo)}
+.teacher-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--border-default)}
+.teacher-card:hover::before{transform:scaleX(1)}
+.teacher-card:nth-child(1){--card-accent:linear-gradient(135deg,var(--amber-500),var(--amber-400))}
+.teacher-card:nth-child(2){--card-accent:linear-gradient(135deg,var(--terra-500),#fb923c)}
+.teacher-card:nth-child(3){--card-accent:linear-gradient(135deg,var(--purple-500),var(--pink-500))}
+.teacher-card:nth-child(4){--card-accent:linear-gradient(135deg,var(--sky-500),var(--blue-400))}
+.teacher-card:nth-child(5){--card-accent:linear-gradient(135deg,var(--forest-500),var(--sky-500))}
+.teacher-card:nth-child(6){--card-accent:linear-gradient(135deg,var(--amber-500),#ef4444)}
+.teacher-card:nth-child(7){--card-accent:linear-gradient(135deg,var(--blue-600),var(--sky-500))}
+.teacher-card:nth-child(8){--card-accent:linear-gradient(135deg,var(--pink-500),#f43f5e)}
+.teacher-card:nth-child(9){--card-accent:linear-gradient(135deg,#f97316,var(--amber-500))}
+.teacher-card:nth-child(10){--card-accent:linear-gradient(135deg,var(--sky-500),var(--blue-600))}
+.teacher-card:nth-child(11){--card-accent:linear-gradient(135deg,#ef4444,#f97316)}
+.teacher-image{width:88px;height:88px;border-radius:50%;margin:0 auto 1rem;background:var(--card-accent,var(--gradient-royal));display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-size:1.8rem;font-weight:600;position:relative;box-shadow:var(--shadow-md);transition:transform .3s var(--ease-expo)}
+.teacher-card:hover .teacher-image{transform:scale(1.06)}
+.age-badge{display:inline-block;padding:4px 12px;background:var(--card-accent,var(--gradient-royal));color:#fff;border-radius:var(--r-full);font-size:.68rem;font-weight:700;letter-spacing:.06em;margin-bottom:.75rem}
+.teacher-card h4{font-family:var(--font-display);font-size:1.125rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;letter-spacing:-.01em}
+.teacher-full-name{font-size:.85rem;color:var(--text-tertiary);display:flex;align-items:center;justify-content:center;gap:6px;font-weight:500}
+.teacher-full-name i{color:var(--amber-500);font-size:.8rem}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--blue-950);color:rgba(255,255,255,.75);padding:clamp(3.5rem,7vw,5rem) 0 2rem;position:relative;overflow:hidden;flex-shrink:0}
+.footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(59,130,246,.18),transparent 50%),radial-gradient(ellipse at 80% 100%,rgba(245,158,11,.10),transparent 50%);pointer-events:none}
+.footer>*{position:relative;z-index:1}
+.footer-scripture{text-align:center;margin-bottom:clamp(2.5rem,6vw,4rem);padding-bottom:clamp(2.5rem,6vw,4rem);border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-scripture p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.6rem);color:var(--amber-300);max-width:820px;margin:0 auto .8rem;line-height:1.5;letter-spacing:-.01em}
+.footer-scripture cite{font-style:normal;font-size:.75rem;letter-spacing:var(--track-widest);text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:3rem;margin-bottom:3rem}
+.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;color:#fff;font-weight:700;font-size:1rem}
+.footer-logo-mark{width:40px;height:40px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--blue-600),var(--blue-800));color:var(--amber-400);display:grid;place-items:center;font-size:1rem;box-shadow:var(--shadow-md)}
+.footer-tagline{font-family:var(--font-display);font-style:italic;font-size:1.125rem;color:var(--amber-300);margin-bottom:1.25rem;line-height:1.5}
+.footer-brand>p{font-size:.875rem;line-height:1.7;margin-bottom:1.5rem;max-width:360px}
+.footer-contact{display:flex;flex-direction:column;gap:.55rem;font-size:.825rem;font-style:normal}
+.footer-contact-item{display:flex;align-items:flex-start;gap:.6rem;color:rgba(255,255,255,.7);line-height:1.5}
+.footer-contact-item i{color:var(--amber-400);width:14px;font-size:.8rem;margin-top:3px;flex-shrink:0}
+.footer-contact-item a{transition:color .2s}
+.footer-contact-item a:hover{color:var(--amber-300)}
+.footer-col h4{color:#fff;font-size:.68rem;font-weight:700;letter-spacing:var(--track-widest);text-transform:uppercase;margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.footer-links a{font-size:.875rem;color:rgba(255,255,255,.65);transition:color .2s,transform .2s;font-weight:500;display:inline-block}
+.footer-links a:hover{color:var(--amber-300);transform:translateX(4px)}
+.footer-newsletter p{font-size:.875rem;margin-bottom:1rem;line-height:1.6}
+.newsletter-form{display:flex;gap:.5rem;margin-bottom:1.25rem}
+.newsletter-form input{flex:1;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);color:#fff;font-family:var(--font-body);font-size:.85rem;min-width:0;transition:all .2s;min-height:44px}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.4)}
+.newsletter-form input:focus{outline:none;border-color:var(--amber-400);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(245,158,11,.15)}
+.newsletter-form button{padding:12px 18px;background:var(--gradient-warm);color:var(--blue-950);border-radius:var(--r-md);font-weight:700;font-size:.85rem;transition:transform .2s,box-shadow .2s;min-height:44px}
+.newsletter-form button:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+.social-links{display:flex;gap:.5rem}
+.social-links a{width:40px;height:40px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:rgba(255,255,255,.7);transition:all .25s;font-size:.9rem}
+.social-links a:hover{background:var(--gradient-warm);color:var(--blue-950);border-color:transparent;transform:translateY(-3px) rotate(-4deg)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:rgba(255,255,255,.5)}
+.footer-legal{display:flex;gap:1.25rem;flex-wrap:wrap}
+.footer-legal a{transition:color .2s}
+.footer-legal a:hover{color:var(--amber-300)}
+
+/* ============ REVEALS ============ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity var(--dur-cine) var(--ease-expo),transform var(--dur-cine) var(--ease-expo)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(30px);transition:opacity var(--dur-slow) var(--ease-expo),transform var(--dur-slow) var(--ease-expo)}
+.reveal-stagger.visible>*{opacity:1;transform:translateY(0)}
+.reveal-stagger.visible>*:nth-child(1){transition-delay:0ms}
+.reveal-stagger.visible>*:nth-child(2){transition-delay:110ms}
+.reveal-stagger.visible>*:nth-child(3){transition-delay:220ms}
+.reveal-stagger.visible>*:nth-child(4){transition-delay:330ms}
+.reveal-stagger.visible>*:nth-child(5){transition-delay:440ms}
+.reveal-stagger.visible>*:nth-child(6){transition-delay:550ms}
+.reveal-stagger.visible>*:nth-child(7){transition-delay:660ms}
+.reveal-stagger.visible>*:nth-child(8){transition-delay:770ms}
+.reveal-stagger.visible>*:nth-child(9){transition-delay:880ms}
+.reveal-stagger.visible>*:nth-child(10){transition-delay:990ms}
+.reveal-stagger.visible>*:nth-child(11){transition-delay:1100ms}
+
+/* ============ RESPONSIVE ============ */
+@media(min-width:2000px){.container{max-width:1440px}}
+@media(max-width:1280px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-visual{max-width:640px;margin:0 auto;width:100%}
+  .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+  .footer-newsletter{grid-column:1/-1}
+}
+@media(max-width:1024px){
+  :root{--sidebar-w:280px}
+  .programs-grid,.skills-grid,.teachers-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  html{scroll-padding-top:calc(var(--bar-h) + 14px)}
+  .mobile-bar{display:flex}
+  .sidebar{transform:translateX(-105%);width:min(86vw,340px);box-shadow:none;z-index:1002}
+  .sidebar.open{transform:none;box-shadow:var(--shadow-2xl)}
+  .sidebar .st{opacity:0;transform:translateX(-16px);transition:opacity .5s var(--ease-expo),transform .5s var(--ease-expo)}
+  .sidebar.open .st{opacity:1;transform:none}
+  .sidebar.open .sidebar-header.st{transition-delay:.06s}
+  .sidebar.open .nav-section:nth-of-type(1).st{transition-delay:.12s}
+  .sidebar.open .nav-section:nth-of-type(2).st{transition-delay:.2s}
+  .sidebar.open .nav-section:nth-of-type(3).st{transition-delay:.28s}
+  .sidebar.open .sidebar-footer.st{transition-delay:.36s}
+  .main-content{margin-left:0}
+  .page-hero{padding-top:calc(var(--bar-h) + 4.5rem);min-height:auto;padding-bottom:4rem}
+  .scroll-indicator-hero{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .section{padding:4.5rem 0}
+  .programs-grid,.skills-grid,.teachers-grid{grid-template-columns:1fr}
+  .timetable-card{padding:1.5rem}
+  .timetable-header{flex-direction:column;align-items:flex-start}
+  .filter-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .footer-legal{justify-content:center}
+  .newsletter-form{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.reveal-stagger>*{opacity:1;transform:none}
+  .orb{animation:none}
+  .cursor-dot,.cursor-ring{display:none}
+}
+@media print{
+  .sidebar,.mobile-bar,.ambient-bg,.noise-overlay,.cursor-dot,.cursor-ring,.page-loader,.scroll-progress,.nav-backdrop,.scroll-indicator-hero,.timetable-actions,.filter-tabs,.footer{display:none!important}
+  .main-content{margin-left:0}
+  body{background:#fff;color:#000}
+  .page-hero{padding:2rem 1rem;color:#000}
+  .hero-bg{display:none}
+  .timetable-card,.skill-card,.program-card,.teacher-card{box-shadow:none!important;border:1px solid #ccc!important;break-inside:avoid;background:#fff!important}
+}
+</style>
+</head>
+<body>
+<div class="page-loader" id="pageLoader" aria-hidden="true"><div class="loader-logo"><i class="fas fa-heart"></i></div></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="ambient-bg" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<header class="mobile-bar">
+  <a href="../index.html" class="mobile-logo" aria-label="KE0274 PEFA Mfangano CYDC — Home"><span class="mark" aria-hidden="true"><i class="fas fa-heart"></i></span><span>KE0274 PEFA · Mfangano CYDC</span></a>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars" aria-hidden="true"></i></button>
+</header>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+<nav class="sidebar" id="sidebar" aria-label="Primary navigation">
+  <div class="sidebar-header st">
+    <a href="../index.html" class="sidebar-logo" aria-label="KE0274 PEFA MFANGANO CYDC — Home">
+      <div class="sidebar-logo-mark" aria-hidden="true"><i class="fas fa-heart"></i></div>
+      <div class="sidebar-logo-text"><span class="sidebar-logo-title">KE0274 PEFA</span><span class="sidebar-logo-sub">Mfangano CYDC</span></div>
+    </a>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section st">
+      <div class="nav-section-title">Main</div>
+      <div class="nav-item"><a href="../index.html" class="nav-link"><div class="nav-link-left"><i class="fas fa-home nav-icon" aria-hidden="true"></i><span>Home</span></div></a></div>
+      <div class="nav-item">
+        <div class="nav-link" role="button" tabindex="0" aria-expanded="false" onclick="toggleDropdown(event, this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDropdown(event,this);}"><div class="nav-link-left"><i class="fas fa-users nav-icon" aria-hidden="true"></i><span>Leadership</span></div><i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></div>
+        <div class="dropdown" role="menu">
+          <a href="../studentleadership/leaders.html" class="dropdown-link" role="menuitem"><i class="fas fa-user-tie" aria-hidden="true"></i> Leaders</a>
+          <a href="../studentleadership/index.html" class="dropdown-link" role="menuitem"><i class="fas fa-vote-yea" aria-hidden="true"></i> Voting</a>
+          <a href="../studentleadership/suggestions.html" class="dropdown-link" role="menuitem"><i class="fas fa-lightbulb" aria-hidden="true"></i> Suggestions</a>
+          <a href="../studentleadership/leadershipempowerment.html" class="dropdown-link" role="menuitem"><i class="fas fa-award" aria-hidden="true"></i> Empowerment</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link" role="button" tabindex="0" aria-expanded="false" onclick="toggleDropdown(event, this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDropdown(event,this);}"><div class="nav-link-left"><i class="fas fa-graduation-cap nav-icon" aria-hidden="true"></i><span>Academics</span></div><i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></div>
+        <div class="dropdown" role="menu">
+          <a href="../academics/dreamachiever.html" class="dropdown-link" role="menuitem"><i class="fas fa-bullseye" aria-hidden="true"></i> Goal Achiever</a>
+          <a href="../academics/department.html" class="dropdown-link" role="menuitem"><i class="fas fa-sitemap" aria-hidden="true"></i> Departments</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-section st">
+      <div class="nav-section-title">Resources</div>
+      <div class="nav-item"><a href="../learningresources/learningresources.html" class="nav-link"><div class="nav-link-left"><i class="fas fa-book nav-icon" aria-hidden="true"></i><span>Learning</span></div></a></div>
+      <div class="nav-item active">
+        <div class="nav-link active" role="button" tabindex="0" aria-expanded="true" onclick="toggleDropdown(event, this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDropdown(event,this);}"><div class="nav-link-left"><i class="fas fa-user-graduate nav-icon" aria-hidden="true"></i><span>Portal</span></div><i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></div>
+        <div class="dropdown" role="menu">
+          <a href="timetable.html" class="dropdown-link active" role="menuitem" aria-current="page"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Timetable</a>
+          <a href="assignment.html" class="dropdown-link" role="menuitem"><i class="fas fa-tasks" aria-hidden="true"></i> Assignments</a>
+          <a href="results.html" class="dropdown-link" role="menuitem"><i class="fas fa-chart-line" aria-hidden="true"></i> Results</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../newsandupdates/newsandupdates.html" class="nav-link"><div class="nav-link-left"><i class="fas fa-newspaper nav-icon" aria-hidden="true"></i><span>News</span></div></a></div>
+    </div>
+    <div class="nav-section st">
+      <div class="nav-section-title">More</div>
+      <div class="nav-item">
+        <div class="nav-link" role="button" tabindex="0" aria-expanded="false" onclick="toggleDropdown(event, this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDropdown(event,this);}"><div class="nav-link-left"><i class="fas fa-images nav-icon" aria-hidden="true"></i><span>Media</span></div><i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i></div>
+        <div class="dropdown" role="menu">
+          <a href="../media-gallery/imagegallery/image-gallery.html" class="dropdown-link" role="menuitem"><i class="fas fa-photo-video" aria-hidden="true"></i> Gallery</a>
+          <a href="../media-gallery/virtual-tour.html" class="dropdown-link" role="menuitem"><i class="fas fa-vr-cardboard" aria-hidden="true"></i> Virtual Tour</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../achievments/achievment.html" class="nav-link"><div class="nav-link-left"><i class="fas fa-trophy nav-icon" aria-hidden="true"></i><span>Achievements</span></div></a></div>
+      <div class="nav-item"><a href="../inventory/inventory.html" class="nav-link"><div class="nav-link-left"><i class="fas fa-boxes nav-icon" aria-hidden="true"></i><span>Inventory</span></div></a></div>
+      <div class="nav-item"><a href="../chatsupport/chat-support.html" class="nav-link"><div class="nav-link-left"><i class="fas fa-comments nav-icon" aria-hidden="true"></i><span>Support</span></div></a></div>
+    </div>
+  </div>
+  <div class="sidebar-footer st">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme"><i class="fas fa-moon" aria-hidden="true"></i><span>Dark Mode</span></button>
+  </div>
+</nav>
+
+<main class="main-content" id="main">
+  <!-- PAGE HERO -->
+  <section class="page-hero" id="hero" aria-labelledby="page-title">
+    <div class="hero-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=2400&q=85" alt="" fetchpriority="high" decoding="async"/></div>
+    <div class="hero-grid-pattern" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-content" id="heroContent">
+        <div class="hero-breadcrumb"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span><span class="sep">/</span><span>Portal</span><span class="sep">/</span><span class="current">Timetable</span></div>
+        <div class="hero-eyebrow"><span class="pulse" aria-hidden="true"></span><span>Saturday Program · FY26 Schedule</span></div>
+        <h1 class="hero-title" id="page-title">
+          <span class="line"><span class="line-inner">The participant</span></span>
+          <span class="line"><span class="line-inner"><span class="italic">timetable.</span></span></span>
+          <span class="line"><span class="line-inner"><span class="divider" aria-hidden="true"></span> Every moment matters.</span></span>
+        </h1>
+        <p class="hero-subtitle">A carefully crafted Saturday schedule designed for holistic growth — academic sessions, skills development, and spiritual formation for all age groups at Sena Centre.</p>
+      </div>
+      <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <div class="hero-stats-card" id="heroStatsCard">
+          <div class="stats-card-header"><div class="stats-card-title">Program at a Glance</div><div class="stats-card-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live · 2026</div></div>
+          <div class="stats-grid">
+            <div class="stat-item"><div class="stat-icon"><i class="fas fa-clock" aria-hidden="true"></i></div><div class="stat-number">8.5h</div><div class="stat-label">Full Day</div></div>
+            <div class="stat-item"><div class="stat-icon"><i class="fas fa-tools" aria-hidden="true"></i></div><div class="stat-number" data-count="8">0</div><div class="stat-label">Skills</div></div>
+            <div class="stat-item"><div class="stat-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div><div class="stat-number" data-count="11">0</div><div class="stat-label">Staff</div></div>
+            <div class="stat-item"><div class="stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div><div class="stat-number" data-count="375">0</div><div class="stat-label">Participants</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#schedule" class="scroll-indicator-hero" aria-label="Scroll to schedule"><span>Scroll</span></a>
+  </section>
+
+  <!-- WEEKLY SCHEDULE -->
+  <section class="section" id="schedule" aria-labelledby="schedule-title">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">Weekly Schedule</div>
+        <h2 class="section-title" id="schedule-title">Every <span class="italic">moment</span> matters.</h2>
+        <p class="section-lede">Our carefully planned timetable balances academics, skills development, and spiritual growth for all participants.</p>
+      </div>
+
+      <div class="timetable-card reveal">
+        <div class="timetable-header">
+          <h3><i class="fas fa-table" aria-hidden="true"></i> Saturday Program Timetable</h3>
+          <span class="timetable-subtitle">FY26 · All Age Groups · Sena Centre · Click any row for details</span>
+        </div>
+
+        <div class="filter-tabs" role="tablist" aria-label="Filter activities">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true"><i class="fas fa-th" aria-hidden="true"></i> All</button>
+          <button class="filter-tab" data-filter="academic" role="tab"><i class="fas fa-book" aria-hidden="true"></i> Academic</button>
+          <button class="filter-tab" data-filter="skills" role="tab"><i class="fas fa-tools" aria-hidden="true"></i> Skills</button>
+          <button class="filter-tab" data-filter="spiritual" role="tab"><i class="fas fa-pray" aria-hidden="true"></i> Spiritual</button>
+          <button class="filter-tab" data-filter="break" role="tab"><i class="fas fa-coffee" aria-hidden="true"></i> Breaks</button>
+          <button class="filter-tab" data-filter="service" role="tab"><i class="fas fa-hands-helping" aria-hidden="true"></i> Service</button>
+        </div>
+
+        <div class="table-container">
+          <table class="timetable-table" id="printableTimetable">
+            <thead>
+              <tr><th><i class="fas fa-clock" aria-hidden="true"></i> Time</th><th><i class="fas fa-calendar-check" aria-hidden="true"></i> Activity</th><th><i class="fas fa-user-tie" aria-hidden="true"></i> Details / Staff</th></tr>
+            </thead>
+            <tbody>
+              <tr data-type="service" data-details="Participants arrive at Sena Centre. Gates open at 6:45 AM. Late arrivals report to the main office."><td class="time-col">07:00 – 07:30 AM</td><td>Arrival <span class="activity-badge badge-service">Service</span></td><td>All Participants</td></tr>
+              <tr data-type="service" data-details="Participants clean their classrooms, compound, and common areas. Builds responsibility and teamwork."><td class="time-col">07:30 – 08:00 AM</td><td>Cleaning Service <span class="activity-badge badge-service">Service</span></td><td>All Part-Time Staff</td></tr>
+              <tr data-type="spiritual" data-details="Morning worship, prayer, and announcements. Participants gather in the main hall for spiritual formation."><td class="time-col">08:00 – 08:45 AM</td><td>Morning Assembly & Devotion <span class="activity-badge badge-spiritual">Spiritual</span></td><td>Staff/CDW on Duty</td></tr>
+              <tr data-type="break" data-details="Nutritious breakfast served in the dining area. Menu rotates weekly for balanced nutrition."><td class="time-col">08:45 – 09:45 AM</td><td>Breakfast <span class="activity-badge badge-break">Break</span></td><td>Dining Area</td></tr>
+              <tr data-type="academic" data-details="Class teachers mark attendance register. Participants settle into their classrooms for the academic session."><td class="time-col">09:45 – 10:00 AM</td><td>Settling & Marking Register <span class="activity-badge badge-academic">Academic</span></td><td>Class Teacher</td></tr>
+              <tr data-type="academic" data-details="Core academic subjects taught by age group. See Part-Time Staff Reference below for specific assignments."><td class="time-col">10:00 – 11:30 AM</td><td>Academic Session <span class="activity-badge badge-academic">Academic</span></td><td>By Age Group (See Staff Below)</td></tr>
+              <tr data-type="break" data-details="Short break for participants to transition to skills sessions. Light refreshments available."><td class="time-col">11:30 – 11:45 AM</td><td>Break & Transition to Skills <span class="activity-badge badge-break">Break</span></td><td>—</td></tr>
+              <tr data-type="skills" data-details="Participants rotate through specialized skills: Piano, Art, Tailoring, Computer, Hairdressing, Music, Sports, and more."><td class="time-col">11:45 AM – 01:15 PM</td><td>Skills Session <span class="activity-badge badge-skills">Skills</span></td><td>Rotation: Piano, Art, Tailoring, Computer, etc.</td></tr>
+              <tr data-type="break" data-details="Balanced lunch served in the dining area. Participants eat together fostering community and fellowship."><td class="time-col">01:15 – 02:15 PM</td><td>Lunch <span class="activity-badge badge-break">Break</span></td><td>All Part-Time Staff</td></tr>
+              <tr data-type="academic" data-details="Rotating special programs: 1st Sat — Mentorship, 2nd Sat — ARISE Health, 3rd Sat — Discipleship, 4th Sat — Birthdays."><td class="time-col">02:15 – 03:00 PM</td><td>Special Program / Games <span class="activity-badge badge-academic">Academic</span></td><td>Rotating Activities (See Below)</td></tr>
+              <tr data-type="service" data-details="Final cleaning of classrooms and compound. Participants prepare the centre for the next week."><td class="time-col">03:00 – 03:30 PM</td><td>Service & Cleaning <span class="activity-badge badge-service">Service</span></td><td>All Participants</td></tr>
+              <tr data-type="spiritual" data-details="Closing prayers, announcements, and dismissal. Football boys stay for additional training 3–5 PM."><td class="time-col">03:30 PM</td><td>Final Assembly & Departure <span class="activity-badge badge-spiritual">Spiritual</span></td><td>Except Football Boys (3–5 PM)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="timetable-actions">
+          <button class="btn btn-primary" id="printBtn"><i class="fas fa-print" aria-hidden="true"></i><span>Print Schedule</span></button>
+          <button class="btn btn-outline" id="downloadBtn"><i class="fas fa-download" aria-hidden="true"></i><span>Download PDF</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIAL PROGRAMS -->
+  <section class="section alt-bg" aria-labelledby="programs-title">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">Rotating Weekly</div>
+        <h2 class="section-title" id="programs-title">Saturday <span class="italic">special</span> programs.</h2>
+        <p class="section-lede">Unique programs running from 2:15 – 3:00 PM each Saturday for holistic development.</p>
+      </div>
+      <div class="programs-grid reveal-stagger">
+        <article class="program-card"><div class="program-week">1st Saturday</div><div class="program-icon"><i class="fas fa-futbol" aria-hidden="true"></i></div><h4>Mentorship & Leadership Training</h4><p>Empowering participants aged 12+ with leadership skills, mentorship, and character development for future impact.</p></article>
+        <article class="program-card"><div class="program-week">2nd Saturday</div><div class="program-icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></div><h4>Sanitation & Reproductive Health</h4><p>ARISE program promoting hygiene, health awareness, and reproductive education in a safe, supportive environment.</p></article>
+        <article class="program-card"><div class="program-week">3rd Saturday</div><div class="program-icon"><i class="fas fa-bible" aria-hidden="true"></i></div><h4>Discipleship Sessions</h4><p>Deepening faith through biblical teaching, worship, and spiritual formation guided by trained mentors.</p></article>
+        <article class="program-card"><div class="program-week">4th Saturday</div><div class="program-icon"><i class="fas fa-birthday-cake" aria-hidden="true"></i></div><h4>Birthday Celebrations</h4><p>Celebrating our participants' special days with joy, recognition, and community fellowship.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" aria-labelledby="skills-title">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">11:45 AM – 1:15 PM</div>
+        <h2 class="section-title" id="skills-title">Skills offered & <span class="italic">part-time staff.</span></h2>
+        <p class="section-lede">Available during the skills session for participants ages 9–18. Each skill is facilitated by a dedicated part-time staff member.</p>
+      </div>
+      <div class="skills-grid reveal-stagger">
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div><h4>Computer Studies</h4><p>Digital literacy & practical applications for the modern world.</p><div class="teacher-profile"><div class="teacher-avatar">TB</div><span class="teacher-name">Teacher Bernard</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-tshirt" aria-hidden="true"></i></div><h4>Tailoring</h4><p>Garment making, design & entrepreneurship skills.</p><div class="teacher-profile"><div class="teacher-avatar">TR</div><span class="teacher-name">Teacher Ruth</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-cut" aria-hidden="true"></i></div><h4>Hairdressing & Barbering</h4><p>Professional styling & grooming techniques.</p><div class="teacher-profile"><div class="teacher-avatar">TJ</div><span class="teacher-name">Teacher Jesca</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-palette" aria-hidden="true"></i></div><h4>Art & Design</h4><p>Creative expression through visual arts and design.</p><div class="teacher-profile"><div class="teacher-avatar">TO</div><span class="teacher-name">Teacher Osodo</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-music" aria-hidden="true"></i></div><h4>Music, Piano & Band</h4><p>Instrumental training, drama & poetry expression.</p><div class="teacher-profile"><div class="teacher-avatar">ST</div><span class="teacher-name">Skills Team</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-users" aria-hidden="true"></i></div><h4>Soft Talents</h4><p>Drama, music, poetry & letter writing development.</p><div class="teacher-profile"><div class="teacher-avatar">MH</div><span class="teacher-name">Madam Hellen</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-comments" aria-hidden="true"></i></div><h4>Interactive Sessions</h4><p>Adolescent mentorship & life guidance programs.</p><div class="teacher-profile"><div class="teacher-avatar">MC</div><span class="teacher-name">Mr. Cliff</span></div></article>
+        <article class="skill-card"><div class="skill-icon"><i class="fas fa-running" aria-hidden="true"></i></div><h4>Indoor & Outdoor Games</h4><p>Netball, Volleyball, Football & teamwork building.</p><div class="teacher-profile"><div class="teacher-avatar">TV</div><span class="teacher-name">Teacher Victor / Cliff</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS TEACHERS -->
+  <section class="section alt-bg" aria-labelledby="teachers-title">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">Academic Session</div>
+        <h2 class="section-title" id="teachers-title">Part-time staff <span class="italic">reference.</span></h2>
+        <p class="section-lede">Academic session groupings and assigned part-time staff by age group.</p>
+      </div>
+      <div class="teachers-grid reveal-stagger">
+        <article class="teacher-card"><div class="teacher-image">CO</div><div class="age-badge">15–18 Years</div><h4>Emmaus Year 1</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Cliff Ochomo</div></article>
+        <article class="teacher-card"><div class="teacher-image">VO</div><div class="age-badge">12–14 Years</div><h4>Blessed Year 2</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Victor Okatch</div></article>
+        <article class="teacher-card"><div class="teacher-image">HO</div><div class="age-badge">12–14 Years</div><h4>Blessed Year 1</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Hellen Odera</div></article>
+        <article class="teacher-card"><div class="teacher-image">CO</div><div class="age-badge">12–14 Years</div><h4>Judea Year 2</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Cliff Ochomo</div></article>
+        <article class="teacher-card"><div class="teacher-image">EW</div><div class="age-badge">12–14 Years</div><h4>Judea Year 1</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Elias Wanchara</div></article>
+        <article class="teacher-card"><div class="teacher-image">VA</div><div class="age-badge">9–11 Years</div><h4>Nazareth Year 2</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Vallary Ayuma</div></article>
+        <article class="teacher-card"><div class="teacher-image">CD</div><div class="age-badge">9–11 Years</div><h4>Jerusalem Year 2</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Carolyne Duwa</div></article>
+        <article class="teacher-card"><div class="teacher-image">CJ</div><div class="age-badge">9–11 Years</div><h4>Nazareth Year 1</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Carolyne Jaoko</div></article>
+        <article class="teacher-card"><div class="teacher-image">SO</div><div class="age-badge">9–11 Years</div><h4>Jerusalem Year 1</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Sarah Okinyi</div></article>
+        <article class="teacher-card"><div class="teacher-image">DT</div><div class="age-badge">6–8 Years</div><h4>Bethel</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Damarice Thocho</div></article>
+        <article class="teacher-card"><div class="teacher-image">MO</div><div class="age-badge">3–5 Years</div><h4>Bethlehem</h4><div class="teacher-full-name"><i class="fas fa-user-tie" aria-hidden="true"></i> Mary Omondi</div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-scripture reveal"><p>"Train a child in the way he should go; even when he is old he will not depart from it."</p><cite>— Proverbs 22:6</cite></div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><div class="footer-logo-mark" aria-hidden="true"><i class="fas fa-heart"></i></div><span>KE0274 PEFA Mfangano CYDC</span></div>
+          <p class="footer-tagline">Nurturing today for a stronger tomorrow.</p>
+          <p>A Compassion International partner dedicated to the holistic development of children and youth on Mfangano Island, Kenya — from pregnancy through young adulthood.</p>
+          <address class="footer-contact">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Sena Centre, PEFA Cathedral Sena, Mfangano Island</span></div>
+            <div class="footer-contact-item"><i class="fas fa-mail-bulk" aria-hidden="true"></i><span>P.O. Box 27-40319, Suba Central Sub-County, Homa Bay County, Kenya</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:ke0274pefamfangano@gmail.com">ke0274pefamfangano@gmail.com</a></div>
+            <div class="footer-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><span><a href="tel:+254723447002">+254 723 447 002</a> · <a href="tel:+254720768958">+254 720 768 958</a> · <a href="tel:+254728729615">+254 728 729 615</a></span></div>
+            <div class="footer-contact-item"><i class="fas fa-globe" aria-hidden="true"></i><a href="https://pefamfanganoecdc.or.ke" target="_blank" rel="noopener">pefamfanganoecdc.or.ke</a></div>
+          </address>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../studentleadership/leaders.html">Leadership</a></li><li><a href="../academics/dreamachiever.html">Academics</a></li><li><a href="../achievments/achievment.html">Achievements</a></li><li><a href="../newsandupdates/newsandupdates.html">News & Updates</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul class="footer-links"><li><a href="../learningresources/learningresources.html">Learning Resources</a></li><li><a href="timetable.html">Student Portal</a></li><li><a href="../media-gallery/imagegallery/image-gallery.html">Media Gallery</a></li><li><a href="../media-gallery/virtual-tour.html">Virtual Tour</a></li><li><a href="../childprotection.html">Child Protection</a></li></ul></div>
+        <div class="footer-col footer-newsletter"><h4>Stay Connected</h4><p>Receive quarterly updates on the lives being transformed through our work.</p><form class="newsletter-form" aria-label="Newsletter subscription"><label for="newsletter-email" style="position:absolute;left:-9999px;">Email address</label><input type="email" id="newsletter-email" placeholder="Your email address" required autocomplete="email"/><button type="submit" aria-label="Subscribe to newsletter">Subscribe</button></form><div class="social-links" aria-label="Social media"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></div></div>
+      </div>
+      <div class="footer-bottom"><div>© <span id="currentYear"></span> KE0274 PEFA Mfangano CYDC. All rights reserved.</div><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Child Protection Policy</a><a href="#">Terms of Use</a><a href="#">Safeguarding</a></div></div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s);};
+  var $$=function(s){return document.querySelectorAll(s);};
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover=matchMedia('(hover: hover)').matches&&innerWidth>1024;
+  $('#currentYear').textContent=new Date().getFullYear();
+
+  var loader=$('#pageLoader');
+  setTimeout(function(){loader.classList.add('hidden');},2000);
+  addEventListener('load',function(){setTimeout(function(){loader.classList.add('hidden');},300);});
+
+  if(canHover&&!reduced){
+    var dot=$('#cursorDot'),ring=$('#cursorRing'),mx=0,my=0,rx=0,ry=0;
+    addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)';},{passive:true});
+    (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';requestAnimationFrame(loop);})();
+    $$('a,button,.nav-link,.skill-card,.program-card,.teacher-card,.dropdown-link,input,.filter-tab,.timetable-table tbody tr').forEach(function(el){
+      el.addEventListener('mouseenter',function(){document.body.classList.add('cursor-hover');});
+      el.addEventListener('mouseleave',function(){document.body.classList.remove('cursor-hover');});
+    });
+  }
+
+  var hero=$('#hero');
+  new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting)hero.classList.add('in-view');});},{threshold:.1}).observe(hero);
+  setTimeout(function(){$('#heroContent').classList.add('loaded');$('#heroVisual').classList.add('loaded');},400);
+
+  // Stats tilt
+  var card=$('#heroStatsCard');
+  if(card&&canHover&&!reduced){
+    card.addEventListener('mousemove',function(e){
+      var r=card.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform='perspective(1200px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg)';
+    });
+    card.addEventListener('mouseleave',function(){card.style.transform='';});
+  }
+
+  var themeToggle=$('#themeToggle');
+  function applyTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);themeToggle.querySelector('i').className=t==='dark'?'fas fa-sun':'fas fa-moon';themeToggle.querySelector('span').textContent=t==='dark'?'Light Mode':'Dark Mode';}
+  applyTheme(localStorage.getItem('theme')||'light');
+  themeToggle.addEventListener('click',function(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});
+
+  var sidebar=$('#sidebar'),mobileToggle=$('#mobileToggle'),backdrop=$('#navBackdrop');
+  function openNav(){sidebar.classList.add('open');backdrop.classList.add('show');document.body.classList.add('nav-locked');mobileToggle.setAttribute('aria-expanded','true');mobileToggle.querySelector('i').className='fas fa-times';mobileToggle.setAttribute('aria-label','Close navigation menu');}
+  function closeNav(){sidebar.classList.remove('open');backdrop.classList.remove('show');document.body.classList.remove('nav-locked');mobileToggle.setAttribute('aria-expanded','false');mobileToggle.querySelector('i').className='fas fa-bars';mobileToggle.setAttribute('aria-label','Open navigation menu');}
+  mobileToggle.addEventListener('click',function(){sidebar.classList.contains('open')?closeNav():openNav();});
+  backdrop.addEventListener('click',closeNav);
+
+  window.toggleDropdown=function(e,el){
+    e.preventDefault();e.stopPropagation();
+    var item=el.closest('.nav-item'),active=item.classList.toggle('active');
+    el.setAttribute('aria-expanded',String(active));
+    $$('.nav-item').forEach(function(i){if(i!==item){i.classList.remove('active');var l=i.querySelector('.nav-link[aria-expanded]');if(l)l.setAttribute('aria-expanded','false');}});
+  };
+  addEventListener('click',function(e){if(!e.target.closest('.nav-item')){$$('.nav-item.active').forEach(function(i){i.classList.remove('active');var l=i.querySelector('.nav-link[aria-expanded]');if(l)l.setAttribute('aria-expanded','false');});}});
+
+  function count(el,target,dur){
+    dur=dur||2400;var suf=el.getAttribute('data-suffix')||'';var t0=performance.now();
+    (function u(now){var p=Math.min((now-t0)/dur,1);var e=p===1?1:1-Math.pow(2,-10*p);
+      el.textContent=Math.floor(e*target).toLocaleString()+suf;
+      if(p<1)requestAnimationFrame(u);else el.textContent=target.toLocaleString()+suf;})(t0);
+  }
+  var cObs=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.querySelectorAll('[data-count]').forEach(function(el){if(!el.dataset.done){el.dataset.done=1;count(el,parseInt(el.dataset.count));}});cObs.unobserve(en.target);}});},{threshold:.3});
+  $$('.stats-grid').forEach(function(s){cObs.observe(s);});
+
+  var rObs=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');rObs.unobserve(en.target);}});},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+  $$('.reveal,.reveal-stagger').forEach(function(el){rObs.observe(el);});
+
+  $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h.length<2)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:reduced?'auto':'smooth'});closeNav();}});});
+
+  var prog=$('#scrollProgress'),heroImg=document.querySelector('.hero-bg img'),ticking=false;
+  addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){var h=document.documentElement;prog.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')';if(heroImg&&h.scrollTop<innerHeight&&!reduced)heroImg.style.transform='scale(1.02) translateY('+(h.scrollTop*.25)+'px)';ticking=false;});ticking=true;}},{passive:true});
+
+  addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      closeNav();
+      $$('.nav-item.active').forEach(function(i){i.classList.remove('active');var l=i.querySelector('.nav-link[aria-expanded]');if(l){l.setAttribute('aria-expanded','false');l.focus();}});
+    }
+  });
+
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(innerWidth>900)closeNav();},200);});
+
+  var form=document.querySelector('.newsletter-form');
+  if(form){form.addEventListener('submit',function(e){e.preventDefault();var inp=form.querySelector('input'),btn=form.querySelector('button'),orig=btn.textContent;btn.textContent='✓ Subscribed';inp.value='';setTimeout(function(){btn.textContent=orig;},2800);});}
+
+  // Filter tabs
+  var filterTabs=$$('.filter-tab'),tableRows=$$('#printableTimetable tbody tr');
+  filterTabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      filterTabs.forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false');});
+      tab.classList.add('active');tab.setAttribute('aria-selected','true');
+      var filter=tab.getAttribute('data-filter');
+      tableRows.forEach(function(row){
+        var type=row.getAttribute('data-type');
+        if(filter==='all'||type===filter)row.classList.remove('hidden-row');
+        else row.classList.add('hidden-row');
+      });
+    });
+  });
+
+  // Row expansion
+  tableRows.forEach(function(row){
+    row.addEventListener('click',function(){
+      tableRows.forEach(function(r){r.classList.remove('selected');});
+      row.classList.add('selected');
+      var details=row.getAttribute('data-details');
+      if(details){
+        var detailsRow=row.nextElementSibling;
+        if(!detailsRow||!detailsRow.classList.contains('details-row')){
+          detailsRow=document.createElement('tr');
+          detailsRow.classList.add('details-row');
+          var td=document.createElement('td');
+          td.colSpan=3;
+          td.innerHTML='<div class="row-details expanded"><div class="row-details-content"><div class="detail-item"><i class="fas fa-info-circle"></i> <span>'+details+'</span></div></div></div>';
+          detailsRow.appendChild(td);
+          row.parentNode.insertBefore(detailsRow,row.nextSibling);
+        }else{
+          var detailsDiv=detailsRow.querySelector('.row-details');
+          detailsDiv.classList.toggle('expanded');
+        }
+      }
+    });
+  });
+
+  $('#printBtn')?.addEventListener('click',function(){window.print();});
+  $('#downloadBtn')?.addEventListener('click',function(){alert('PDF download feature coming soon! For now, use the print function to save as PDF.');});
+})();
+</script>
+</body>
+</html>
