@@ -325,90 +325,246 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   .lm-frame:hover .lm-media img { transform: none; }
 }
 
-/* ============ LEADERSHIP TREE ============ */
+/* ============ VERTICAL TRICKLE-DOWN LEADERSHIP TREE ============ */
 .ltree-wrap{position:relative}
 .ltree-hint{display:flex;align-items:center;justify-content:center;gap:.65rem;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-tertiary);margin:0 0 clamp(2rem,5vw,3.5rem)}
 .ltree-hint i{color:var(--amber-500);animation:leafSway 3.2s ease-in-out infinite;display:inline-block}
 @keyframes leafSway{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(12deg)}}
-.ltree{--ltree-line:rgba(217,119,6,.38);position:relative;padding:clamp(1rem,2vw,2rem) 0 0;overflow-x:auto;overflow-y:visible;scrollbar-width:none}
-.ltree::-webkit-scrollbar{display:none}
-.ltree::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:560px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.09),transparent 70%);pointer-events:none;z-index:0}
-[data-theme="dark"] .ltree{--ltree-line:rgba(251,191,36,.32)}
-.ltree-branch{display:flex;flex-direction:column;align-items:center;position:relative;padding:44px 12px 0;z-index:1}
-.ltree>.ltree-branch{padding:0}
-.ltree-kids{display:flex;justify-content:center;position:relative;padding-top:44px}
-.ltree-kids::before{content:'';position:absolute;top:0;left:50%;border-left:2px solid var(--ltree-line);width:0;height:44px}
-.ltree-kids>.ltree-branch::before,.ltree-kids>.ltree-branch::after{content:'';position:absolute;top:0;right:50%;border-top:2px solid var(--ltree-line);width:50%;height:44px}
-.ltree-kids>.ltree-branch::after{right:auto;left:50%;border-left:2px solid var(--ltree-line)}
-.ltree-kids>.ltree-branch:only-child::before,.ltree-kids>.ltree-branch:only-child::after{display:none}
-.ltree-kids>.ltree-branch:only-child{padding-top:0}
-.ltree-kids>.ltree-branch:first-child::before,.ltree-kids>.ltree-branch:last-child::after{border:0 none}
-.ltree-kids>.ltree-branch:last-child::before{border-right:2px solid var(--ltree-line);border-radius:0 22px 0 0}
-.ltree-kids>.ltree-branch:first-child::after{border-radius:22px 0 0 0}
-.ltree-node{--bc:#F59E0B;--bg:rgba(245,158,11,.12);--tilt:0deg;position:relative;cursor:pointer;outline:none;border-radius:18px;padding:6px;transition:transform .4s var(--ease-expo)}
-.ltree-node:hover,.ltree-node:focus,.ltree-node:focus-within{z-index:80}
-.ltree-node:focus-visible{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--bc)}
-.ltree-node[data-b="gold"]{--bc:#F59E0B;--bg:rgba(245,158,11,.13);--tilt:-2deg}
-.ltree-node[data-b="sky"]{--bc:#38BDF8;--bg:rgba(56,189,248,.13);--tilt:2deg}
-.ltree-node[data-b="royal"]{--bc:#2563EB;--bg:rgba(37,99,235,.11);--tilt:-1.5deg}
-.ltree-node[data-b="coral"]{--bc:#F43F5E;--bg:rgba(244,63,94,.11);--tilt:2.5deg}
-.ltree-node[data-b="emerald"]{--bc:#10B981;--bg:rgba(16,185,129,.13);--tilt:-2.5deg}
-.ltree-node[data-b="orange"]{--bc:#F97316;--bg:rgba(249,115,22,.13);--tilt:1.5deg}
-.ltree-node[data-b="teal"]{--bc:#14B8A6;--bg:rgba(20,184,166,.13);--tilt:-1.5deg}
-.ltree-node[data-b="amber"]{--bc:#FBBF24;--bg:rgba(251,191,36,.15);--tilt:2deg}
-.ltree-node[data-b="cyan"]{--bc:#06B6D4;--bg:rgba(6,182,212,.13);--tilt:-2deg}
-.ltree-node[data-b="violet"]{--bc:#8B5CF6;--bg:rgba(139,92,246,.13);--tilt:1.5deg}
-.ltree-node[data-b="lime"]{--bc:#84CC16;--bg:rgba(132,204,22,.15);--tilt:-2.5deg}
-.ltree-node[data-b="rose"]{--bc:#EC4899;--bg:rgba(236,72,153,.13);--tilt:2.5deg}
-.ltree-head{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:96px}
-.ltree-photo{width:96px;height:96px;border-radius:50%;border:3px solid var(--bc);padding:3px;background:var(--bg);transform:rotate(var(--tilt));transition:transform .5s var(--ease-spring),box-shadow .4s var(--ease-expo);overflow:hidden;margin-bottom:12px;position:relative}
-.ltree-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
-.ltree-node:hover .ltree-photo,.ltree-node:focus .ltree-photo{transform:rotate(0deg) scale(1.1);box-shadow:0 16px 36px -10px var(--bc)}
-.ltree-name{font-family:var(--font-display);font-size:1rem;font-weight:500;letter-spacing:-.01em;line-height:1.2;color:var(--text-primary);transition:color .3s}
-.ltree-role{font-family:var(--font-mono);font-size:.6rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--bc);margin-top:5px;white-space:nowrap}
-.ltree-node.is-root .ltree-photo{width:128px;height:128px;border-width:4px}
-.ltree-node.is-root .ltree-name{font-size:1.3rem}
-.ltree-node.is-root .ltree-role{font-size:.66rem}
-.ltree-node.is-root .ltree-head{min-width:130px}
-.ltree-crown{position:absolute;top:-16px;left:50%;transform:translateX(-50%);color:var(--amber-400);font-size:1.1rem;z-index:2;text-shadow:0 2px 8px rgba(245,158,11,.5)}
-.ltree-kids .ltree-kids .ltree-node .ltree-photo{width:84px;height:84px}
-.ltree-kids .ltree-kids .ltree-node .ltree-head{min-width:88px}
-.ltree-kids .ltree-kids .ltree-node .ltree-name{font-size:.92rem}
-.ltree-detail{position:absolute;top:100%;left:50%;margin-left:-165px;width:330px;margin-top:14px;text-align:left;z-index:90;pointer-events:none;background:var(--bg-surface);border:1px solid var(--border-subtle);border-top:3px solid var(--bc);border-radius:16px;padding:18px 20px 20px;box-shadow:var(--shadow-2xl);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .35s var(--ease-expo),transform .35s var(--ease-expo),visibility .35s}
-.ltree-node[data-pos~="l"] .ltree-detail{left:0;margin-left:0}
-.ltree-node[data-pos~="r"] .ltree-detail{left:auto;right:0;margin-left:0}
-.ltree-node[data-pos~="up"] .ltree-detail{top:auto;bottom:100%;margin-top:0;margin-bottom:14px;transform:translateY(-12px)}
-.ltree-node:hover .ltree-detail,.ltree-node:focus .ltree-detail,.ltree-node:focus-within .ltree-detail{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
-.ltree-quote{font-family:var(--font-display);font-style:italic;font-size:.98rem;line-height:1.5;color:var(--text-primary);margin-bottom:10px}
-.ltree-quote::before{content:'\201C';color:var(--bc);font-size:1.7rem;line-height:0;vertical-align:-.4em;margin-right:3px;font-weight:500}
-.ltree-desc{font-size:.85rem;line-height:1.7;color:var(--text-secondary);margin-bottom:14px}
-.ltree-tags{display:flex;flex-wrap:wrap;gap:6px}
-.ltree-tags span{font-family:var(--font-mono);font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:var(--bg);color:var(--bc)}
-@media(max-width:1100px){
-  .ltree{overflow:visible;padding-top:0}
-  .ltree::before{width:340px;height:240px;top:-40px}
-  .ltree-kids{display:block;position:relative;margin-left:32px;border-left:2px solid var(--ltree-line);padding:0}
-  .ltree-kids::before{display:none}
-  .ltree-branch{display:block;position:relative;padding:20px 0 0}
-  .ltree>.ltree-branch{padding:0}
-  .ltree-kids>.ltree-branch::before{content:'';position:absolute;left:-2px;top:46px;width:26px;border-top:2px solid var(--ltree-line);height:0;border-radius:0}
-  .ltree-kids>.ltree-branch::after{display:none}
-  .ltree-node{display:flex;align-items:center;gap:14px;text-align:left;padding:12px;border:1px solid var(--border-hairline);border-radius:16px;background:var(--bg-surface);box-shadow:var(--shadow-sm);transition:box-shadow .35s var(--ease-expo),border-color .35s}
-  .ltree-node:hover,.ltree-node:focus,.ltree-node:focus-within{box-shadow:var(--shadow-lg);border-color:var(--bc)}
-  .ltree-head{display:flex;flex-direction:row;align-items:center;gap:14px;text-align:left;width:100%;min-width:0}
-  .ltree-photo{margin:0;width:58px;height:58px;flex-shrink:0}
-  .ltree-node.is-root .ltree-photo{width:72px;height:72px;border-width:3px}
-  .ltree-kids .ltree-kids .ltree-node .ltree-photo{width:58px;height:58px}
-  .ltree-kids .ltree-kids .ltree-node .ltree-head{min-width:0}
-  .ltree-info{flex:1;min-width:0}
-  .ltree-name{font-size:.98rem}
-  .ltree-crown{top:-12px;font-size:.95rem}
-  .ltree-detail{position:static;width:auto;margin:12px 2px 2px;padding:0 6px;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;border:none;display:none}
-  .ltree-node:hover .ltree-detail,.ltree-node:focus .ltree-detail,.ltree-node:focus-within .ltree-detail{display:block;transform:none}
+
+.ltree-vertical {
+  position: relative;
+  padding: 2rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
-@media(prefers-reduced-motion:reduce){
-  .ltree-node,.ltree-photo,.ltree-detail,.ltree-hint i{transition:none!important;animation:none!important}
+
+.ltree-level {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
+
+.ltree-level-split {
+  max-width: 700px;
+}
+
+.ltree-level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.ltree-connector {
+  width: 2px;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, var(--amber-400), var(--blue-400));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.ltree-connector-split {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  margin: 0 auto;
+}
+.ltree-connector-split::before, .ltree-connector-split::after {
+  content: '';
+  width: 2px;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, var(--blue-400), var(--sky-400));
+  border-radius: 2px;
+}
+
+.ltree-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo), border-color 0.4s;
+  overflow: hidden;
+}
+
+.ltree-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color, var(--blue-500));
+}
+
+.ltree-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--border-default);
+}
+
+.ltree-card.is-root {
+  max-width: 400px;
+  text-align: center;
+}
+.ltree-card.is-root .ltree-card-header {
+  flex-direction: column;
+  text-align: center;
+}
+
+.ltree-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ltree-card-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--card-color, var(--blue-500));
+  padding: 2px;
+  background: var(--bg-surface);
+  flex-shrink: 0;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.ltree-card:hover .ltree-card-img {
+  transform: scale(1.05);
+}
+
+.ltree-card.is-root .ltree-card-img {
+  width: 80px;
+  height: 80px;
+}
+
+.ltree-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.ltree-card-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--card-color, var(--blue-500));
+  margin-top: 4px;
+}
+
+.ltree-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.ltree-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.ltree-card.is-root .ltree-card-tags {
+  justify-content: center;
+}
+
+.ltree-card-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--card-bg, rgba(59, 130, 246, 0.1));
+  color: var(--card-color, var(--blue-600));
+  transition: transform 0.2s;
+}
+
+.ltree-card:hover .ltree-card-tag {
+  transform: translateY(-2px);
+}
+
+/* Color Themes */
+.ltree-card[data-color="gold"] { --card-color: #F59E0B; --card-bg: rgba(245, 158, 11, 0.1); }
+.ltree-card[data-color="sky"] { --card-color: #38BDF8; --card-bg: rgba(56, 189, 248, 0.1); }
+.ltree-card[data-color="royal"] { --card-color: #2563EB; --card-bg: rgba(37, 99, 235, 0.1); }
+.ltree-card[data-color="coral"] { --card-color: #F43F5E; --card-bg: rgba(244, 63, 94, 0.1); }
+.ltree-card[data-color="emerald"] { --card-color: #10B981; --card-bg: rgba(16, 185, 129, 0.1); }
+.ltree-card[data-color="orange"] { --card-color: #F97316; --card-bg: rgba(249, 115, 22, 0.1); }
+.ltree-card[data-color="teal"] { --card-color: #14B8A6; --card-bg: rgba(20, 184, 166, 0.1); }
+.ltree-card[data-color="amber"] { --card-color: #FBBF24; --card-bg: rgba(251, 191, 36, 0.1); }
+.ltree-card[data-color="cyan"] { --card-color: #06B6D4; --card-bg: rgba(6, 182, 212, 0.1); }
+.ltree-card[data-color="violet"] { --card-color: #8B5CF6; --card-bg: rgba(139, 92, 246, 0.1); }
+.ltree-card[data-color="lime"] { --card-color: #84CC16; --card-bg: rgba(132, 204, 22, 0.1); }
+.ltree-card[data-color="rose"] { --card-color: #EC4899; --card-bg: rgba(236, 72, 153, 0.1); }
+
+[data-theme="dark"] .ltree-card {
+  background: var(--bg-muted);
+  border-color: var(--border-subtle);
+}
+[data-theme="dark"] .ltree-card-img {
+  background: var(--bg-muted);
+}
+
+@media (max-width: 768px) {
+  .ltree-level-split {
+    flex-direction: column;
+    align-items: center;
+    max-width: 340px;
+  }
+  .ltree-connector-split {
+    width: 2px;
+    justify-content: center;
+  }
+  .ltree-connector-split::after {
+    display: none;
+  }
+  .ltree-level-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+/* ============ NEW LEADERSHIP SECTION STYLES ============ */
+.l-card { display: flex; flex-direction: column; height: 100%; }
+.l-card-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+.l-card-icon { width: 48px; height: 48px; border-radius: var(--r-md); background: var(--bg-muted); color: var(--blue-600); display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0; transition: transform .3s var(--ease-expo), background .3s; }
+.b-card:hover .l-card-icon { transform: scale(1.05); background: var(--blue-50); }
+[data-theme="dark"] .b-card:hover .l-card-icon { background: rgba(30,79,216,.2); color: var(--sky-400); }
+.l-card-meta { flex: 1; min-width: 0; }
+.l-card-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; line-height: 1.3; color: var(--text-primary); margin-bottom: 4px; }
+.l-card-name { font-size: 0.8rem; font-weight: 500; color: var(--amber-600); letter-spacing: 0.02em; }
+[data-theme="dark"] .l-card-name { color: var(--amber-400); }
+.l-card-desc { font-size: 0.88rem; line-height: 1.65; color: var(--text-secondary); flex: 1; }
+.l-card-primary { border-top: 3px solid var(--amber-400); }
+.l-card-primary .l-card-icon { background: rgba(245,158,11,.12); color: var(--amber-600); }
+[data-theme="dark"] .l-card-primary .l-card-icon { background: rgba(245,158,11,.2); color: var(--amber-400); }
+
+.specialist-note { grid-column: 1 / -1; font-size: 0.82rem; color: var(--text-tertiary); font-style: italic; text-align: center; margin-top: -1rem; margin-bottom: 1rem; }
+
+.accountability-card { background: var(--blue-50); border: 1px solid var(--blue-100); border-left: 4px solid var(--blue-600); }
+[data-theme="dark"] .accountability-card { background: rgba(30,79,216,.1); border-color: rgba(30,79,216,.3); border-left-color: var(--sky-400); }
+.accountability-card .b-title { color: var(--blue-800); font-size: 1.1rem; }
+[data-theme="dark"] .accountability-card .b-title { color: var(--sky-300); }
+.accountability-card .b-desc { color: var(--blue-900); font-size: 0.9rem; }
+[data-theme="dark"] .accountability-card .b-desc { color: var(--text-secondary); }
+
 /* ============ CLOSING ============ */
 .closing-card{background:var(--gradient-hero);color:#fff;border-radius:var(--r-3xl);padding:clamp(2.5rem,5.5vw,5rem) clamp(1.5rem,4vw,3.5rem);text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-2xl)}
 .closing-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(59,130,246,.3),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(245,158,11,.18),transparent 50%);pointer-events:none}
@@ -758,185 +914,263 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
       <div class="reveal">
         <div class="section-eyebrow">The Council</div>
         <h2 class="section-title" id="council-title">The 2026 <span class="italic">Leadership Tree</span></h2>
-        <p class="section-lede">Twelve voices, one calling. Rooted in the President, the council branches into every ministry — each leader a unique limb elected to serve 378 students with integrity, faith, and courage.</p>
+        <p class="section-lede">Twelve voices, one calling. Rooted in the Student Governor, the council branches into every ministry — each leader elected to serve 378 students with integrity, faith, and courage.</p>
       </div>
 
       <div class="ltree-wrap reveal">
-        <p class="ltree-hint"><i class="fas fa-leaf" aria-hidden="true"></i><span>Hover or focus a leader to reveal their story</span></p>
+        <p class="ltree-hint"><i class="fas fa-leaf" aria-hidden="true"></i><span>Our leadership structure, trickling down to every ministry</span></p>
 
-        <div class="ltree" role="list" aria-label="Student council leadership tree">
-          <!-- ROOT : THE PRESIDENT -->
-          <div class="ltree-branch">
-            <article class="ltree-node is-root" data-b="gold" tabindex="0" role="listitem" aria-label="Stanley Okinyi, The President">
-              <div class="ltree-head">
-                <div class="ltree-photo"><i class="fas fa-crown ltree-crown" aria-hidden="true"></i><img src="image/20260417_122043.png" alt="Portrait of Stanley Okinyi" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                <div class="ltree-info">
-                  <h3 class="ltree-name">Stanley Okinyi</h3>
-                  <p class="ltree-role">The President</p>
+        <div class="ltree-vertical" role="list" aria-label="Student council leadership tree">
+          
+          <!-- LEVEL 1: ROOT -->
+          <div class="ltree-level">
+            <article class="ltree-card is-root" data-color="gold" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_122043.png" alt="Stanley Okinyi" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Stanley Okinyi</h3>
+                  <p class="ltree-card-role">Student Governor / Council President</p>
                 </div>
               </div>
-              <div class="ltree-detail">
-                <p class="ltree-quote">I serve because every voice on this island deserves to be heard.</p>
-                <p class="ltree-desc">The head of the student council. Stanley presides over all meetings, represents the student body in administrative discussions, and ensures that the vision of the council is executed effectively across every department.</p>
-                <div class="ltree-tags"><span>Elected 2026</span><span>Flagship Role</span><span>Servant-Leader</span></div>
+              <p class="ltree-card-desc">Provides overall participant leadership, represents the student body, and chairs PPC meetings to ensure the council's vision is executed effectively across all departments.</p>
+              <div class="ltree-card-tags">
+                <span class="ltree-card-tag">Elected 2026</span>
+                <span class="ltree-card-tag">Flagship Role</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="ltree-connector"></div>
+
+          <!-- LEVEL 2: DEPUTY & PRIME MINISTER -->
+          <div class="ltree-level ltree-level-split">
+            <article class="ltree-card" data-color="sky" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/mercyemilia (1).png" alt="Mercy Amelie" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Mercy Amelie</h3>
+                  <p class="ltree-card-role">Deputy Governor / Deputy President</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Supports the President, undertakes delegated duties, and focuses on internal harmony and the precise implementation of council decisions.</p>
+              <div class="ltree-card-tags">
+                <span class="ltree-card-tag">Harmony</span>
+                <span class="ltree-card-tag">Delegation</span>
               </div>
             </article>
 
-            <!-- MAIN LIMBS : DEPUTY + PRIME MINISTER -->
-            <div class="ltree-kids">
-              <!-- DEPUTY PRESIDENT -->
-              <div class="ltree-branch">
-                <article class="ltree-node" data-b="sky" tabindex="0" role="listitem" aria-label="Mercy Amelie, Deputy President">
-                  <div class="ltree-head">
-                    <div class="ltree-photo"><img src="image/mercyemilia (1).png" alt="Portrait of Mercy Amelie" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                    <div class="ltree-info">
-                      <h3 class="ltree-name">Mercy Amelie</h3>
-                      <p class="ltree-role">Deputy President</p>
-                    </div>
-                  </div>
-                  <div class="ltree-detail">
-                    <p class="ltree-desc">Mercy assists the President and steps in when the President is unavailable. She focuses on internal harmony within the council and oversees the implementation of council decisions with grace and precision.</p>
-                    <div class="ltree-tags"><span>Elected 2026</span><span>Harmony</span></div>
-                  </div>
-                </article>
-
-                <!-- DEPUTY BRANCHES -->
-                <div class="ltree-kids">
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="coral" data-pos="l up" tabindex="0" role="listitem" aria-label="Emanuel Isaac, Welfare and Protection">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_121234.jpg" alt="Portrait of Emanuel Isaac" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Emanuel Isaac</h3><p class="ltree-role">Welfare &amp; Protection</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Dedicated to the safety and well-being of every child. He handles peer conflicts, reports safeguarding concerns to patrons, and ensures every student feels safe and valued.</p>
-                        <div class="ltree-tags"><span>Child Protection</span><span>Advocate</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="emerald" data-pos="up" tabindex="0" role="listitem" aria-label="Blessing Carey, Environment">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_122148.jpg" alt="Portrait of Blessing Carey" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Blessing Carey</h3><p class="ltree-role">Environment</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Leads the Green Initiative — tree planting days, the school garden project, and keeping our campus clean and eco-friendly.</p>
-                        <div class="ltree-tags"><span>Green Initiative</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="orange" data-pos="up" tabindex="0" role="listitem" aria-label="Rooney Odero, Sports Captain">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_121009.jpg" alt="Portrait of Rooney Odero" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Rooney Odero</h3><p class="ltree-role">Sports Captain</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Sports &amp; Games Captain. Manages equipment and organizes leagues — promoting physical fitness, teamwork, and fair play during inter-class and inter-school competitions.</p>
-                        <div class="ltree-tags"><span>Sports Captain</span><span>Teamwork</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="teal" data-pos="up" tabindex="0" role="listitem" aria-label="Blessing Achieng, Language Prefect">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_122148.jpg" alt="Portrait of Blessing Achieng" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Blessing Achieng</h3><p class="ltree-role">Language Prefect</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Language &amp; Communication Prefect. Upholds the center's code of communication and has outstanding skill in language use within the educational environment — a voice of clarity and respect.</p>
-                        <div class="ltree-tags"><span>Language Lead</span><span>Clarity</span></div>
-                      </div>
-                    </article>
-                  </div>
+            <article class="ltree-card" data-color="royal" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_122010.png" alt="Thomas Odhiambo" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Thomas Odhiambo</h3>
+                  <p class="ltree-card-role">Prime Minister / Council Secretary</p>
                 </div>
               </div>
+              <p class="ltree-card-desc">Chief coordinator of council activities. Ensures all departments work together, manages meeting records, and follows up on actions.</p>
+              <div class="ltree-card-tags">
+                <span class="ltree-card-tag">Coordination</span>
+                <span class="ltree-card-tag">Bridge</span>
+              </div>
+            </article>
+          </div>
 
-              <!-- PRIME MINISTER -->
-              <div class="ltree-branch">
-                <article class="ltree-node" data-b="royal" tabindex="0" role="listitem" aria-label="Thomas Odhiambo, Prime Minister">
-                  <div class="ltree-head">
-                    <div class="ltree-photo"><img src="image/20260417_122010.png" alt="Portrait of Thomas Odhiambo" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                    <div class="ltree-info">
-                      <h3 class="ltree-name">Thomas Odhiambo</h3>
-                      <p class="ltree-role">Prime Minister</p>
-                    </div>
-                  </div>
-                  <div class="ltree-detail">
-                    <p class="ltree-desc">Chief coordinator of council activities. He ensures all departments work together and serves as the primary link between academic staff and student leaders.</p>
-                    <div class="ltree-tags"><span>Coordination</span><span>Bridge</span></div>
-                  </div>
-                </article>
+          <div class="ltree-connector-split"></div>
 
-                <!-- PRIME MINISTER BRANCHES -->
-                <div class="ltree-kids">
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="amber" data-pos="up" tabindex="0" role="listitem" aria-label="Cyprian Awiti, Religious Leader">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/IMG-20251121-WA0206(1) (2).jpg" alt="Portrait of Cyprian Awiti" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Cyprian Awiti</h3><p class="ltree-role">Religious Leader</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-quote">Leading hearts before leading hands.</p>
-                        <p class="ltree-desc">Cyprian leads the student body in spiritual matters. He organizes chapel programs, leads the choir, and encourages moral uprightness and integrity among students — the spiritual anchor of our council.</p>
-                        <div class="ltree-tags"><span>Chapel Lead</span><span>Choir Director</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="cyan" data-pos="up" tabindex="0" role="listitem" aria-label="Mesharck Clinton, ICT Prefect">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_122129.png" alt="Portrait of Mesharck Clinton" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Mesharck Clinton</h3><p class="ltree-role">ICT Prefect</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Assists in the computer lab ensuring rules are followed. Helps peers with basic coding and typing skills and manages the digital notice board.</p>
-                        <div class="ltree-tags"><span>Tech Lead</span><span>Coding Mentor</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="violet" data-pos="up" tabindex="0" role="listitem" aria-label="Nephia Gracia, Library Prefect">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_122139.jpg" alt="Portrait of Nephia Gracia" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Nephia Gracia</h3><p class="ltree-role">Library Prefect</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Maintains order in the library. Assists in issuing books, ensures silence is maintained for studying, and organizes the Reading Week campaigns.</p>
-                        <div class="ltree-tags"><span>Library Lead</span><span>Reading Week</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="lime" data-pos="up" tabindex="0" role="listitem" aria-label="Ivine Oketch, Chief Bell Ringer">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_121831.jpg" alt="Portrait of Ivine Oketch" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Ivine Oketch</h3><p class="ltree-role">Chief Bell Ringer</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Responsible for timekeeping. Rings the bell for class changes, meal times, and lights out — ensuring the daily schedule runs strictly on time.</p>
-                        <div class="ltree-tags"><span>Timekeeper</span><span>Punctuality</span></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="ltree-branch">
-                    <article class="ltree-node" data-b="rose" data-pos="r up" tabindex="0" role="listitem" aria-label="Synaider Achieng, Media and Communications">
-                      <div class="ltree-head">
-                        <div class="ltree-photo"><img src="image/20260417_121252.jpg" alt="Portrait of Synaider Achieng" loading="lazy" decoding="async" onerror="this.style.display='none'"></div>
-                        <div class="ltree-info"><h3 class="ltree-name">Synaider Achieng</h3><p class="ltree-role">Media &amp; Comms</p></div>
-                      </div>
-                      <div class="ltree-detail">
-                        <p class="ltree-desc">Media &amp; Communications. Manages the center's notice boards, social media updates, and event documentation — ensuring transparent communication between administration and students.</p>
-                        <div class="ltree-tags"><span>Media Lead</span><span>Voice of Council</span></div>
-                      </div>
-                    </article>
-                  </div>
+          <!-- LEVEL 3: MINISTERS (GRID) -->
+          <div class="ltree-level ltree-level-grid">
+            
+            <article class="ltree-card" data-color="coral" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_121234.jpg" alt="Emanuel Isaac" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Emanuel Isaac</h3>
+                  <p class="ltree-card-role">Minister for Welfare, Inclusion & Child-Protection</p>
                 </div>
               </div>
-            </div>
+              <p class="ltree-card-desc">Coordinates participant welfare, handles peer conflicts, and oversees specialist teams to ensure every student feels safe and valued.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Advocate</span><span class="ltree-card-tag">Safety</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="violet" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_122139.jpg" alt="Nephia Gracia" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Nephia Gracia</h3>
+                  <p class="ltree-card-role">Minister for Education, Reading & Academic Excellence</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Promotes reading, study habits, and educational participation. Maintains order in learning spaces and organizes academic campaigns.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Academics</span><span class="ltree-card-tag">Reading Week</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="cyan" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_122129.png" alt="Mesharck Clinton" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Mesharck Clinton</h3>
+                  <p class="ltree-card-role">Minister for Skills, Innovation & ICT</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Promotes practical skills, digital learning, and innovation. Assists peers with basic coding, typing, and manages digital notice boards.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Tech Lead</span><span class="ltree-card-tag">Innovation</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="amber" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/IMG-20251121-WA0206(1) (2).jpg" alt="Cyprian Awiti" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Cyprian Awiti</h3>
+                  <p class="ltree-card-role">Minister for Faith, Discipleship & Character</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Promotes character development, discipleship, integrity, and service. Leads chapel programs and encourages moral uprightness.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Chapel Lead</span><span class="ltree-card-tag">Integrity</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="teal" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_122148.jpg" alt="Blessing Achieng" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Blessing Achieng</h3>
+                  <p class="ltree-card-role">Minister for Health, Nutrition & Hygiene</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Promotes health awareness, nutrition, hygiene, and healthy lifestyles among the student body, working closely with Centre health staff.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Well-being</span><span class="ltree-card-tag">Hygiene</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="orange" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_121009.jpg" alt="Rooney Odero" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Rooney Odero</h3>
+                  <p class="ltree-card-role">Minister for Sports, Recreation & Talent</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Encourages sports, physical activity, teamwork, and recreation. Manages equipment and organizes leagues for inter-class competitions.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Teamwork</span><span class="ltree-card-tag">Fair Play</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="lime" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_121831.jpg" alt="Ivine Oketch" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Ivine Oketch</h3>
+                  <p class="ltree-card-role">Minister for Arts, Music, Culture & Performance</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Promotes creative expression, arts, music, drama, and cultural activities, ensuring every student's creative gifts are honored and developed.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Creative Lead</span><span class="ltree-card-tag">Talent</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="emerald" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_122148.jpg" alt="Blessing Carey" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Blessing Carey</h3>
+                  <p class="ltree-card-role">Minister for Environment, Agriculture & Community Service</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Promotes conservation, agriculture, environmental responsibility, and community service. Leads the Green Initiative and school garden projects.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Green Initiative</span><span class="ltree-card-tag">Stewardship</span></div>
+            </article>
+
+            <article class="ltree-card" data-color="rose" tabindex="0" role="listitem">
+              <div class="ltree-card-header">
+                <img src="image/20260417_121252.jpg" alt="Synaider Achieng" class="ltree-card-img" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <div>
+                  <h3 class="ltree-card-title">Synaider Achieng</h3>
+                  <p class="ltree-card-role">Minister for Media, Communication & Digital Citizenship</p>
+                </div>
+              </div>
+              <p class="ltree-card-desc">Supports approved communications, participant feedback, and responsible digital participation. Manages notice boards and event documentation.</p>
+              <div class="ltree-card-tags"><span class="ltree-card-tag">Media Lead</span><span class="ltree-card-tag">Transparency</span></div>
+            </article>
+
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <div class="section-divider"></div>
+
+  <!-- SPECIALIST TEAMS -->
+  <section class="section" id="specialist-teams" aria-labelledby="teams-title">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">Specialist Support</div>
+        <h2 class="section-title" id="teams-title">Participant <span class="italic">Specialist Teams</span></h2>
+        <p class="section-lede">Coordinated under the Minister for Welfare, Inclusion and Child-Protection Awareness, these teams provide focused peer support while remaining under the direct supervision of qualified adult professionals.</p>
+      </div>
+
+      <div class="bento reveal-stagger">
+        <article class="b-card spot sp-4 l-card">
+          <div class="b-card-content">
+            <div class="l-card-header">
+              <div class="l-card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+              <div class="l-card-meta">
+                <h3 class="l-card-title">Peer Counsellors Team</h3>
+                <p class="l-card-name">Adult Lead: Social Worker</p>
+              </div>
+            </div>
+            <p class="l-card-desc">Promotes kindness, positive peer relationships, inclusion, supportive listening within training, and appropriate help-seeking.</p>
+          </div>
+        </article>
+
+        <article class="b-card spot sp-4 l-card">
+          <div class="b-card-content">
+            <div class="l-card-header">
+              <div class="l-card-icon"><i class="fas fa-shield-halved"></i></div>
+              <div class="l-card-meta">
+                <h3 class="l-card-title">Child Protection Participant Specialists</h3>
+                <p class="l-card-name">Adult Lead: Project Director</p>
+              </div>
+            </div>
+            <p class="l-card-desc">Promotes child-rights awareness, safe boundaries, respectful conduct, and awareness of approved reporting channels.</p>
+          </div>
+        </article>
+
+        <article class="b-card spot sp-4 l-card">
+          <div class="b-card-content">
+            <div class="l-card-header">
+              <div class="l-card-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="l-card-meta">
+                <h3 class="l-card-title">Education and Skills Mentors</h3>
+                <p class="l-card-name">Adult Lead: Project Accountant</p>
+              </div>
+            </div>
+            <p class="l-card-desc">Encourages reading, study habits, supervised peer learning, goal-setting, career awareness, and practical and digital skills.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- CLASS REPS & ACTIVITY LEADERS -->
+      <div class="bento reveal" style="margin-top: clamp(2rem, 4vw, 3rem);">
+        <article class="b-card spot sp-12" style="background: var(--bg-muted);">
+          <div class="b-card-content" style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <div class="l-card-icon" style="width: 56px; height: 56px; font-size: 1.3rem;"><i class="fas fa-users-gear"></i></div>
+            <div style="flex: 1; min-width: 280px;">
+              <h3 class="l-card-title" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Class Representatives &amp; Activity Leaders</h3>
+              <p class="l-card-desc" style="margin: 0;">Class representatives communicate participant views to the council, while club, activity, and skills leaders support approved activities, teamwork, talent development, and inclusion across all Centre programmes.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ACCOUNTABILITY & SAFEGUARDING NOTE -->
+      <div class="bento reveal" style="margin-top: clamp(3rem, 6vw, 5rem);">
+        <article class="b-card accountability-card sp-12">
+          <div class="b-card-content" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(30,79,216,.1); color: var(--blue-600); display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0;">
+              <i class="fas fa-circle-info"></i>
+            </div>
+            <div>
+              <h3 class="b-title" style="margin-bottom: 0.75rem; font-size: 1.1rem;">Accountability &amp; Safeguarding Framework</h3>
+              <p class="b-desc" style="margin: 0; line-height: 1.7;">The Program Participants Council (PPC) complements rather than replaces Centre management, professional staff, church governance, the Accountability Structure, or statutory child-protection authorities. Participant leaders do not independently investigate safeguarding allegations, provide professional counselling, approve Centre expenditure, or exercise authority reserved for authorised staff. All safeguarding concerns are immediately escalated to designated adult professionals.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1038,7 +1272,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     let mx=0,my=0,rx=0,ry=0;
     addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;},{passive:true});
     (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
-    $$('a,button,.nav-link,.b-card,.ltree-node,.dropdown-link,input').forEach(el=>{
+    $$('a,button,.nav-link,.b-card,.ltree-card,.dropdown-link,input').forEach(el=>{
       el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
       el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
     });
