@@ -18,7 +18,6 @@
   --sky-500:#0EA5E9;--sky-400:#38BDF8;--sky-300:#7DD3FC;--sky-100:#E0F2FE;
   --amber-600:#D97706;--amber-500:#F59E0B;--amber-400:#FBBF24;--amber-300:#FCD34D;--amber-200:#FDE68A;--amber-100:#FEF3C7;--gold-400:#FACC15;
   --forest-600:#1e6b3a;--forest-500:#2d8a4e;--forest-400:#4ade80;
-  --terra-500:#a8553c;--purple-500:#8b5cf6;--pink-500:#ec4899;
   --stone-700:#44403C;--stone-500:#78716C;--stone-400:#A8A29E;--ivory:#FDFCF8;--pearl:#F8F6F1;
   --bg-page:var(--ivory);--bg-surface:#fff;--bg-muted:var(--pearl);--bg-glass:rgba(255,255,255,.72);
   --text-primary:var(--blue-950);--text-secondary:var(--stone-700);--text-tertiary:var(--stone-500);--text-quaternary:var(--stone-400);--text-accent:var(--blue-600);
@@ -40,7 +39,7 @@
   --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;--r-2xl:32px;--r-3xl:40px;--r-full:9999px;
   --ease-expo:cubic-bezier(.16,1,.3,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);
   --dur-fast:180ms;--dur-base:360ms;--dur-slow:640ms;--dur-cine:1200ms;
-  --sidebar-w:300px;--container:1320px;--bar-h:64px;--gap:clamp(1rem,1.6vw,1.5rem);
+  --sidebar-w:300px;--bar-h:64px;
 }
 [data-theme="dark"]{
   --bg-page:#030812;--bg-surface:#081122;--bg-muted:#050C1A;--bg-glass:rgba(9,18,34,.78);
@@ -123,12 +122,12 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
 .sidebar-footer{margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--border-hairline);flex-shrink:0}
 .theme-toggle{width:100%;padding:11px;background:var(--bg-muted);border:1px solid var(--border-subtle);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.825rem;font-weight:600;transition:all .2s;min-height:44px}
 .theme-toggle:hover{background:var(--blue-900);color:#fff;border-color:var(--blue-900)}
-.main-content{margin-left:var(--sidebar-w);position:relative;z-index:2;transition:margin-left .5s var(--ease-expo);display:flex;flex-direction:column;min-height:100vh}
+.main-content{margin-left:var(--sidebar-w);position:relative;z-index:2;transition:margin-left .5s var(--ease-expo);display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
 
 /* ============ PORTAL ============ */
-.portal-section{flex:1;display:flex;flex-direction:column;min-height:0;position:relative;background:var(--bg-surface);padding-top:clamp(1rem,2vw,1.5rem);padding-left:clamp(1rem,2vw,1.5rem);padding-right:clamp(1rem,2vw,1.5rem)}
-.portal-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1rem;margin-bottom:1rem;background:var(--bg-glass);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid var(--border-hairline);border-radius:var(--r-2xl);box-shadow:var(--shadow-sm);flex-shrink:0;z-index:10;flex-wrap:wrap}
-[data-theme="dark"] .portal-header{background:rgba(8,17,34,.6)}
+.portal-section{flex:1;display:flex;flex-direction:column;min-height:0;position:relative;background:var(--bg-page);padding:0}
+.portal-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;margin-bottom:0;background:var(--bg-page);border-bottom:1px solid var(--border-hairline);flex-shrink:0;z-index:10;flex-wrap:wrap;border-radius:0}
+[data-theme="dark"] .portal-header{background:var(--bg-page)}
 .portal-title-group{display:flex;align-items:center;gap:.85rem;min-width:0}
 .portal-icon{width:44px;height:44px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--amber-500),var(--amber-400));color:var(--blue-950);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;box-shadow:var(--shadow-gold);transition:transform .4s var(--ease-spring)}
 .portal-header:hover .portal-icon{transform:rotate(-6deg) scale(1.05)}
@@ -140,12 +139,10 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
 .portal-status .dot{width:7px;height:7px;border-radius:50%;background:var(--forest-500);box-shadow:0 0 8px var(--forest-500);animation:statusPulse 2s ease-in-out infinite}
 @keyframes statusPulse{0%,100%{opacity:1}50%{opacity:.45}}
 
-.portal-frame{flex:1;position:relative;background:var(--bg-glass);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid var(--border-default);border-radius:var(--r-3xl);overflow:hidden;box-shadow:var(--shadow-2xl);min-height:85vh;transition:all .5s var(--ease-expo)}
-[data-theme="dark"] .portal-frame{background:rgba(8,17,34,.85)}
-.portal-frame:hover{box-shadow:0 28px 64px -16px rgba(11,27,51,.22),0 56px 120px -28px rgba(11,27,51,.32)}
-.portal-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber-400),var(--blue-600),var(--sky-500));z-index:3}
-.portal-frame::after{content:'';position:absolute;bottom:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(245,158,11,.08),transparent 70%);pointer-events:none;z-index:0}
-.portal-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;background:var(--bg-surface);z-index:2}
+.portal-frame{flex:1;position:relative;background:var(--bg-page);border:none;border-radius:0;overflow:hidden;box-shadow:none;min-height:0}
+[data-theme="dark"] .portal-frame{background:var(--bg-page)}
+.portal-frame::before,.portal-frame::after{display:none}
+.portal-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;background:var(--bg-page);z-index:2}
 
 .portal-loader{position:absolute;inset:0;background:var(--bg-surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;z-index:5;transition:opacity var(--dur-base) var(--ease-expo),visibility var(--dur-base) var(--ease-expo)}
 .portal-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
@@ -169,135 +166,10 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
 .error-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--gradient-warm);color:var(--blue-950);border-radius:var(--r-full);font-weight:700;font-size:.875rem;transition:all var(--dur-fast) var(--ease-expo);box-shadow:var(--shadow-gold);margin-top:.5rem}
 .error-btn:hover{transform:translateY(-3px);box-shadow:0 20px 40px -8px rgba(245,158,11,.5),0 0 48px rgba(245,158,11,.4)}
 
-.portal-note{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1rem;margin-bottom:1.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--text-tertiary);font-weight:500;letter-spacing:var(--track-wide);text-transform:uppercase;flex-wrap:wrap}
+.portal-note{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.5rem;margin:0;border-top:1px solid var(--border-hairline);background:var(--bg-page);font-family:var(--font-mono);font-size:.72rem;color:var(--text-tertiary);font-weight:500;letter-spacing:var(--track-wide);text-transform:uppercase;flex-wrap:wrap}
 .portal-note i{color:var(--forest-500);font-size:.85rem}
 
-/* ============ SCROLL INDICATOR ============ */
-.scroll-indicator{display:flex;align-items:center;justify-content:center;gap:.85rem;padding:1.1rem 1.5rem;background:var(--bg-glass);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid var(--border-hairline);border-radius:var(--r-2xl);cursor:pointer;transition:all .3s var(--ease-expo);font-size:.85rem;font-weight:600;color:var(--text-secondary);letter-spacing:.04em;text-transform:uppercase;margin:0 clamp(1rem,2vw,1.5rem) 1.5rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
-.scroll-indicator::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber-400),var(--blue-600),var(--sky-500));transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease-expo)}
-.scroll-indicator:hover{background:var(--bg-surface);color:var(--text-primary);box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.scroll-indicator:hover::before{transform:scaleX(1)}
-.scroll-indicator .indicator-icon{width:36px;height:36px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--amber-100),var(--amber-50));color:var(--amber-600);display:grid;place-items:center;font-size:.9rem;transition:all .4s var(--ease-spring)}
-[data-theme="dark"] .scroll-indicator .indicator-icon{background:rgba(245,158,11,.15);color:var(--amber-400)}
-.scroll-indicator:hover .indicator-icon{transform:scale(1.08) rotate(-6deg)}
-.scroll-indicator i.chevron{font-size:.7rem;transition:transform .3s var(--ease-expo);color:var(--text-quaternary)}
-.scroll-indicator.expanded i.chevron{transform:rotate(180deg);color:var(--amber-500)}
-
-/* ============ TIPS CONTENT (expandable) ============ */
-.content-scroll{flex:0 0 auto;overflow:hidden;max-height:0;transition:max-height .6s var(--ease-expo)}
-.content-scroll.expanded{max-height:10000px}
-
-/* ============ SECTIONS ============ */
-.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 clamp(1.25rem,4vw,2rem);position:relative}
-.section{padding:clamp(4rem,8vw,5rem) 0;position:relative}
-.section.alt-bg{background:var(--bg-muted)}
-.section.alt-bg::before{content:'';position:absolute;inset:0;background:var(--gradient-mesh);opacity:.3;pointer-events:none}
-.section.alt-bg>*{position:relative;z-index:1}
-.section-header{text-align:center;margin-bottom:clamp(2.5rem,5vw,3rem)}
-.section-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.68rem;font-weight:700;letter-spacing:var(--track-widest);text-transform:uppercase;color:var(--blue-600);margin-bottom:1.25rem}
-[data-theme="dark"] .section-eyebrow{color:var(--sky-400)}
-.section-eyebrow::before{content:'';width:32px;height:1px;background:currentColor}
-.section-title{font-family:var(--font-display);font-size:clamp(1.9rem,4vw,2.75rem);font-weight:400;line-height:1.1;letter-spacing:var(--track-tighter);color:var(--text-primary);margin-bottom:1rem;font-variation-settings:"opsz" 144}
-.section-title .italic{font-style:italic;font-weight:300;background:linear-gradient(135deg,var(--blue-600),var(--sky-400));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-[data-theme="dark"] .section-title .italic{background:linear-gradient(135deg,var(--sky-300),var(--amber-300));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.section-lede{font-size:clamp(.95rem,1.3vw,1.0625rem);color:var(--text-secondary);line-height:1.75;max-width:640px;margin:0 auto}
-
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap)}
-.info-card{background:var(--bg-surface);border:1px solid var(--border-hairline);border-radius:var(--r-2xl);padding:1.75rem;transition:all .4s var(--ease-expo);position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
-.info-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--card-accent,var(--gradient-royal));transform:scaleY(0);transform-origin:top;transition:transform .6s var(--ease-expo)}
-.info-card::after{content:'';position:absolute;inset:0;background:radial-gradient(320px circle at var(--sx,50%) var(--sy,50%),rgba(30,79,216,.06),transparent 65%);opacity:0;transition:opacity .45s;pointer-events:none;z-index:0}
-.info-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl);border-color:var(--border-default)}
-.info-card:hover::before{transform:scaleY(1)}
-.info-card:hover::after{opacity:1}
-[data-theme="dark"] .info-card::after{background:radial-gradient(320px circle at var(--sx,50%) var(--sy,50%),rgba(56,189,248,.08),transparent 65%)}
-
-.info-card>*{position:relative;z-index:1}
-.info-card:nth-child(1){--card-accent:linear-gradient(180deg,var(--amber-500),#ef4444)}
-.info-card:nth-child(2){--card-accent:linear-gradient(180deg,var(--blue-600),var(--sky-500))}
-.info-card:nth-child(3){--card-accent:linear-gradient(180deg,var(--sky-500),var(--blue-400))}
-.info-card:nth-child(4){--card-accent:linear-gradient(180deg,var(--pink-500),#f43f5e)}
-.info-card:nth-child(5){--card-accent:linear-gradient(180deg,var(--forest-500),var(--sky-500))}
-.info-card:nth-child(6){--card-accent:linear-gradient(180deg,var(--purple-500),#a855f7)}
-.info-card:nth-child(7){--card-accent:linear-gradient(180deg,#f97316,var(--amber-500))}
-.info-card:nth-child(8){--card-accent:linear-gradient(180deg,var(--blue-500),var(--sky-400))}
-.info-card:nth-child(9){--card-accent:linear-gradient(180deg,var(--terra-500),var(--amber-500))}
-
-.info-icon{width:48px;height:48px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--blue-50),var(--sky-100));color:var(--blue-700);display:grid;place-items:center;font-size:1.15rem;margin-bottom:.85rem;box-shadow:var(--inset-light);transition:transform .4s var(--ease-spring)}
-.info-card:hover .info-icon{transform:scale(1.08) rotate(-4deg)}
-[data-theme="dark"] .info-icon{background:linear-gradient(135deg,rgba(30,79,216,.15),rgba(14,165,233,.1));color:var(--sky-400)}
-
-.info-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;letter-spacing:-.01em;line-height:1.3}
-.info-card>p{color:var(--text-secondary);font-size:.875rem;line-height:1.7;margin-bottom:.85rem}
-.info-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem}
-.info-card ul li{display:flex;align-items:flex-start;gap:.6rem;color:var(--text-secondary);font-size:.825rem;line-height:1.55}
-.info-card ul li i{color:var(--amber-500);margin-top:4px;flex-shrink:0;font-size:.7rem}
-[data-theme="dark"] .info-card ul li i{color:var(--amber-400)}
-
-.tips-highlight{background:var(--gradient-hero);color:#fff;border-radius:var(--r-3xl);padding:clamp(1.75rem,3vw,2.5rem);margin-top:clamp(2rem,4vw,2.5rem);position:relative;overflow:hidden;box-shadow:var(--shadow-2xl),var(--inset-glass)}
-.tips-highlight::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber-400),var(--blue-600),var(--sky-500))}
-.tips-highlight::after{content:'';position:absolute;top:-50%;right:-20%;width:380px;height:380px;background:radial-gradient(circle,rgba(245,158,11,.15),transparent 70%);pointer-events:none}
-.tips-highlight>*{position:relative;z-index:1}
-.tips-highlight h4{font-family:var(--font-display);font-size:clamp(1.15rem,2vw,1.35rem);font-weight:500;color:#fff;margin-bottom:.75rem;display:flex;align-items:center;gap:.85rem;letter-spacing:-.015em}
-.tips-highlight h4 i{color:var(--amber-400);font-size:1.2rem}
-.tips-highlight p{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.8;max-width:780px}
-
-/* ============ FOOTER ============ */
-.footer{background:var(--blue-950);color:rgba(255,255,255,.75);padding:clamp(3.5rem,7vw,5rem) 0 2rem;position:relative;overflow:hidden;flex-shrink:0}
-.footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(59,130,246,.18),transparent 50%),radial-gradient(ellipse at 80% 100%,rgba(245,158,11,.10),transparent 50%);pointer-events:none}
-.footer>*{position:relative;z-index:1}
-.footer-scripture{text-align:center;margin-bottom:clamp(2.5rem,6vw,4rem);padding-bottom:clamp(2.5rem,6vw,4rem);border-bottom:1px solid rgba(255,255,255,.08)}
-.footer-scripture p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.6rem);color:var(--amber-300);max-width:820px;margin:0 auto .8rem;line-height:1.5;letter-spacing:-.01em}
-.footer-scripture cite{font-style:normal;font-size:.75rem;letter-spacing:var(--track-widest);text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:3rem;margin-bottom:3rem}
-.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;color:#fff;font-weight:700;font-size:1rem}
-.footer-logo-mark{width:40px;height:40px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--blue-600),var(--blue-800));color:var(--amber-400);display:grid;place-items:center;font-size:1rem;box-shadow:var(--shadow-md)}
-.footer-tagline{font-family:var(--font-display);font-style:italic;font-size:1.125rem;color:var(--amber-300);margin-bottom:1.25rem;line-height:1.5}
-.footer-brand>p{font-size:.875rem;line-height:1.7;margin-bottom:1.5rem;max-width:360px}
-.footer-contact{display:flex;flex-direction:column;gap:.55rem;font-size:.825rem;font-style:normal}
-.footer-contact-item{display:flex;align-items:flex-start;gap:.6rem;color:rgba(255,255,255,.7);line-height:1.5}
-.footer-contact-item i{color:var(--amber-400);width:14px;font-size:.8rem;margin-top:3px;flex-shrink:0}
-.footer-contact-item a{transition:color .2s}
-.footer-contact-item a:hover{color:var(--amber-300)}
-.footer-col h4{color:#fff;font-size:.68rem;font-weight:700;letter-spacing:var(--track-widest);text-transform:uppercase;margin-bottom:1.25rem}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.75rem}
-.footer-links a{font-size:.875rem;color:rgba(255,255,255,.65);transition:color .2s,transform .2s;font-weight:500;display:inline-block}
-.footer-links a:hover{color:var(--amber-300);transform:translateX(4px)}
-.footer-newsletter p{font-size:.875rem;margin-bottom:1rem;line-height:1.6}
-.newsletter-form{display:flex;gap:.5rem;margin-bottom:1.25rem}
-.newsletter-form input{flex:1;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);color:#fff;font-family:var(--font-body);font-size:.85rem;min-width:0;transition:all .2s;min-height:44px}
-.newsletter-form input::placeholder{color:rgba(255,255,255,.4)}
-.newsletter-form input:focus{outline:none;border-color:var(--amber-400);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(245,158,11,.15)}
-.newsletter-form button{padding:12px 18px;background:var(--gradient-warm);color:var(--blue-950);border-radius:var(--r-md);font-weight:700;font-size:.85rem;transition:transform .2s,box-shadow .2s;min-height:44px}
-.newsletter-form button:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold)}
-.social-links{display:flex;gap:.5rem}
-.social-links a{width:40px;height:40px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:rgba(255,255,255,.7);transition:all .25s;font-size:.9rem}
-.social-links a:hover{background:var(--gradient-warm);color:var(--blue-950);border-color:transparent;transform:translateY(-3px) rotate(-4deg)}
-.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:rgba(255,255,255,.5)}
-.footer-legal{display:flex;gap:1.25rem;flex-wrap:wrap}
-.footer-legal a{transition:color .2s}
-.footer-legal a:hover{color:var(--amber-300)}
-
-/* ============ REVEALS ============ */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity var(--dur-cine) var(--ease-expo),transform var(--dur-cine) var(--ease-expo)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-stagger>*{opacity:0;transform:translateY(30px);transition:opacity var(--dur-slow) var(--ease-expo),transform var(--dur-slow) var(--ease-expo)}
-.reveal-stagger.visible>*{opacity:1;transform:translateY(0)}
-.reveal-stagger.visible>*:nth-child(1){transition-delay:0ms}
-.reveal-stagger.visible>*:nth-child(2){transition-delay:80ms}
-.reveal-stagger.visible>*:nth-child(3){transition-delay:160ms}
-.reveal-stagger.visible>*:nth-child(4){transition-delay:240ms}
-.reveal-stagger.visible>*:nth-child(5){transition-delay:320ms}
-.reveal-stagger.visible>*:nth-child(6){transition-delay:400ms}
-.reveal-stagger.visible>*:nth-child(7){transition-delay:480ms}
-.reveal-stagger.visible>*:nth-child(8){transition-delay:560ms}
-.reveal-stagger.visible>*:nth-child(9){transition-delay:640ms}
-
 /* ============ RESPONSIVE ============ */
-@media(min-width:2000px){.container{max-width:1440px}}
-@media(max-width:1280px){
-  .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
-  .footer-newsletter{grid-column:1/-1}
-}
 @media(max-width:1024px){:root{--sidebar-w:280px}}
 @media(max-width:900px){
   html{scroll-padding-top:calc(var(--bar-h) + 14px)}
@@ -312,38 +184,25 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   .sidebar.open .nav-section:nth-of-type(3).st{transition-delay:.28s}
   .sidebar.open .sidebar-footer.st{transition-delay:.36s}
   .main-content{margin-left:0;padding-top:calc(var(--bar-h) + env(safe-area-inset-top))}
-  .portal-section{padding-top:.75rem}
-  .portal-frame{min-height:75vh;border-radius:var(--r-xl)}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
-  .footer-brand{grid-column:1/-1}
+  .portal-section{padding-top:0}
+  .portal-frame{min-height:0;border-radius:0}
 }
 @media(max-width:640px){
-  .section{padding:4rem 0}
-  .info-grid{grid-template-columns:1fr}
-  .info-card{padding:1.25rem}
-  .tips-highlight{padding:1.5rem}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-  .footer-legal{justify-content:center}
-  .newsletter-form{flex-direction:column}
-  .portal-header{flex-direction:column;align-items:stretch;gap:.75rem}
+  .portal-header{flex-direction:column;align-items:stretch;gap:.75rem;padding:1rem}
   .portal-actions{justify-content:space-between}
-  .scroll-indicator{flex-wrap:wrap;justify-content:center}
+  .portal-note{padding:1rem}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .reveal,.reveal-stagger>*{opacity:1;transform:none}
   .orb{animation:none}
   .cursor-dot,.cursor-ring{display:none}
   .loader-mark::before,.loader-bar::before{animation:none}
   .loader-bar::before{width:100%;left:0}
 }
 @media print{
-  .sidebar,.mobile-bar,.ambient-bg,.noise-overlay,.cursor-dot,.cursor-ring,.page-loader,.scroll-progress,.nav-backdrop,.portal-frame,.scroll-indicator{display:none!important}
+  .sidebar,.mobile-bar,.ambient-bg,.noise-overlay,.cursor-dot,.cursor-ring,.page-loader,.scroll-progress,.nav-backdrop,.portal-frame{display:none!important}
   .main-content{margin-left:0;height:auto}
   body{background:#fff;color:#000}
-  .content-scroll{max-height:none!important}
-  .info-card{box-shadow:none!important;border:1px solid #ccc!important;break-inside:avoid;background:#fff!important}
 }
 </style>
 </head>
@@ -464,260 +323,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
       <span>Synced with your profile · Secure connection · Updated in real-time</span>
     </div>
   </section>
-
-  <!-- SCROLL INDICATOR -->
-  <div class="scroll-indicator" id="scrollIndicator" role="button" tabindex="0" aria-expanded="false" aria-controls="tipsContent">
-    <div class="indicator-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
-    <span>Study Tips & Assignment Strategies</span>
-    <i class="fas fa-chevron-down chevron" aria-hidden="true"></i>
-  </div>
-
-  <!-- TIPS CONTENT (expandable) -->
-  <div class="content-scroll" id="tipsContent">
-    <!-- EXAM TIPS -->
-    <section class="section alt-bg" aria-labelledby="tips-title">
-      <div class="container">
-        <div class="section-header reveal">
-          <div class="section-eyebrow">Smart Strategies</div>
-          <h2 class="section-title" id="tips-title">How to <span class="italic">ace</span> your assignments.</h2>
-          <p class="section-lede">Master these essential techniques to excel in your assignments and achieve academic success.</p>
-        </div>
-
-        <div class="info-grid reveal-stagger">
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
-            <h3>Create a Study Plan</h3>
-            <p>Organize your study time effectively with a structured plan that covers all subjects.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Break subjects into manageable chunks</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Allocate specific times for each topic</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Include regular breaks to avoid burnout</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prioritize difficult subjects when energy is high</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
-            <h3>Practice Active Recall</h3>
-            <p>Test yourself regularly instead of just re-reading notes. This strengthens memory retention.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Use flashcards for key concepts</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Close books and recite from memory</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Teach concepts to someone else</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Practice past exam questions</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-redo" aria-hidden="true"></i></div>
-            <h3>Use Spaced Repetition</h3>
-            <p>Review material at increasing intervals to move information into long-term memory.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Review after 1 day, then 3 days, then 1 week</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Focus more on topics you find difficult</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Use apps like Anki for digital flashcards</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Consistency beats cramming every time</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
-            <h3>Maintain Healthy Habits</h3>
-            <p>Your physical and mental health directly impacts your academic performance.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Get 7–9 hours of sleep nightly</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Eat nutritious meals and stay hydrated</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Exercise regularly to boost brain function</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Practice stress management techniques</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></div>
-            <h3>Master Exam Day</h3>
-            <p>Prepare properly on the day of your exam to perform at your best.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Arrive early and stay calm</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Read all instructions carefully</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Start with questions you know well</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Manage time wisely and review answers</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-pencil-alt" aria-hidden="true"></i></div>
-            <h3>Take Effective Notes</h3>
-            <p>Good notes are the foundation of successful studying and exam preparation.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Use the Cornell note-taking method</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Highlight key concepts and definitions</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Create mind maps for complex topics</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Review and organize notes weekly</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-            <h3>Study in Groups</h3>
-            <p>Collaborative learning can deepen understanding and expose you to different perspectives.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Choose focused, motivated study partners</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Set clear goals for each session</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Take turns teaching each other</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Stay on topic and avoid distractions</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
-            <h3>Develop Growth Mindset</h3>
-            <p>Believe that intelligence can be developed through dedication and hard work.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Embrace challenges as learning opportunities</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Learn from mistakes and failures</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Celebrate effort, not just results</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Stay positive and persistent</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-            <h3>Manage Your Time</h3>
-            <p>Effective time management is crucial for balancing studies, rest, and other activities.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Use the Pomodoro technique (25 min study, 5 min break)</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Eliminate distractions during study time</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Set realistic daily and weekly goals</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Reward yourself for completing tasks</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="tips-highlight reveal">
-          <h4><i class="fas fa-quote-left" aria-hidden="true"></i> Remember This</h4>
-          <p>Success in assignments is not about being the smartest — it's about being the most prepared. Consistent effort, smart study strategies, and a positive mindset will take you further than natural talent alone. Trust the process, stay disciplined, and believe in your ability to succeed. You've got this!</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRACKING -->
-    <section class="section" aria-labelledby="tracking-title">
-      <div class="container">
-        <div class="section-header reveal">
-          <div class="section-eyebrow">Stay on Track</div>
-          <h2 class="section-title" id="tracking-title">How to keep <span class="italic">track</span> of progress.</h2>
-          <p class="section-lede">Stay on top of your academic journey with these proven tracking methods.</p>
-        </div>
-
-        <div class="info-grid reveal-stagger">
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
-            <h3>Use the Assignments Portal</h3>
-            <p>Access your official assignments dashboard to view tasks, track deadlines, and submit work.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> View all your assignments in one place</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Track your progress over time</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Identify subjects needing improvement</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Download official reports for records</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
-            <h3>Maintain a Study Journal</h3>
-            <p>Document your daily study activities, challenges, and achievements to stay accountable.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Record what you studied each day</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Note difficulties and breakthroughs</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Track time spent on each subject</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Reflect on what study methods work best</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
-            <h3>Set SMART Goals</h3>
-            <p>Create Specific, Measurable, Achievable, Relevant, and Time-bound academic goals.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Set target grades for each subject</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Break long-term goals into weekly targets</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Review and adjust goals regularly</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Celebrate when you achieve milestones</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-            <h3>Create Visual Progress Charts</h3>
-            <p>Visual representations help you see your progress and stay motivated.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Graph your test scores over time</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Use color coding for different subjects</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Track study hours with a calendar</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Celebrate improvements visually</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-sync-alt" aria-hidden="true"></i></div>
-            <h3>Conduct Weekly Reviews</h3>
-            <p>Regular self-assessment helps you stay on track and make necessary adjustments.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Review what you learned each week</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Identify areas needing more attention</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Adjust your study plan accordingly</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Seek help when you're struggling</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
-            <h3>Seek Teacher Feedback</h3>
-            <p>Teachers are your best resource for understanding your performance and improving.</p>
-            <ul>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ask for feedback on assignments</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Discuss your progress during office hours</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Request guidance on weak areas</li>
-              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Learn from their experience and insights</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="tips-highlight reveal">
-          <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Pro Tip</h4>
-          <p>The key to academic success is consistency. Small, daily efforts compound into remarkable achievements over time. Don't wait until exam season to start tracking your progress — make it a daily habit. Remember: what gets measured gets managed, and what gets managed gets improved!</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-scripture reveal">
-          <p>"Train a child in the way he should go; even when he is old he will not depart from it."</p>
-          <cite>— Proverbs 22:6</cite>
-        </div>
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="footer-logo"><div class="footer-logo-mark" aria-hidden="true"><i class="fas fa-heart"></i></div><span>KE0274 PEFA Mfangano CYDC</span></div>
-            <p class="footer-tagline">Nurturing today for a stronger tomorrow.</p>
-            <p>A Compassion International partner dedicated to the holistic development of children and youth on Mfangano Island, Kenya — from pregnancy through young adulthood.</p>
-            <address class="footer-contact">
-              <div class="footer-contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Sena Centre, PEFA Cathedral Sena, Mfangano Island</span></div>
-              <div class="footer-contact-item"><i class="fas fa-mail-bulk" aria-hidden="true"></i><span>P.O. Box 27-40319, Suba Central Sub-County, Homa Bay County, Kenya</span></div>
-              <div class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:ke0274pefamfangano@gmail.com">ke0274pefamfangano@gmail.com</a></div>
-              <div class="footer-contact-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><span><a href="tel:+254723447002">+254 723 447 002</a> · <a href="tel:+254720768958">+254 720 768 958</a> · <a href="tel:+254728729615">+254 728 729 615</a></span></div>
-              <div class="footer-contact-item"><i class="fas fa-globe" aria-hidden="true"></i><a href="https://pefamfanganoecdc.or.ke" target="_blank" rel="noopener">pefamfanganoecdc.or.ke</a></div>
-            </address>
-          </div>
-          <div class="footer-col"><h4>Explore</h4><ul class="footer-links"><li><a href="../index.html">Home</a></li><li><a href="../studentleadership/leaders.html">Leadership</a></li><li><a href="../academics/dreamachiever.html">Academics</a></li><li><a href="../achievments/achievment.html">Achievements</a></li><li><a href="../newsandupdates/newsandupdates.html">News & Updates</a></li></ul></div>
-          <div class="footer-col"><h4>Resources</h4><ul class="footer-links"><li><a href="../learningresources/learningresources.html">Learning Resources</a></li><li><a href="timetable.html">Student Portal</a></li><li><a href="../media-gallery/imagegallery/image-gallery.html">Media Gallery</a></li><li><a href="../media-gallery/virtual-tour.html">Virtual Tour</a></li><li><a href="../childprotection.html">Child Protection</a></li></ul></div>
-          <div class="footer-col footer-newsletter"><h4>Stay Connected</h4><p>Receive quarterly updates on the lives being transformed through our work.</p><form class="newsletter-form" aria-label="Newsletter subscription"><label for="newsletter-email" style="position:absolute;left:-9999px;">Email address</label><input type="email" id="newsletter-email" placeholder="Your email address" required autocomplete="email"/><button type="submit" aria-label="Subscribe to newsletter">Subscribe</button></form><div class="social-links" aria-label="Social media"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a></div></div>
-        </div>
-        <div class="footer-bottom"><div>© <span id="currentYear"></span> KE0274 PEFA Mfangano CYDC. All rights reserved.</div><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Child Protection Policy</a><a href="#">Terms of Use</a><a href="#">Safeguarding</a></div></div>
-      </div>
-    </footer>
-  </div>
 </main>
 
 <script>
@@ -726,7 +331,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   var $$=function(s){return document.querySelectorAll(s);};
   var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canHover=matchMedia('(hover: hover)').matches&&innerWidth>1024;
-  $('#currentYear').textContent=new Date().getFullYear();
 
   // Page loader
   var loader=$('#pageLoader');
@@ -738,20 +342,9 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
     var dot=$('#cursorDot'),ring=$('#cursorRing'),mx=0,my=0,rx=0,ry=0;
     addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)';},{passive:true});
     (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';requestAnimationFrame(loop);})();
-    $$('a,button,.nav-link,.info-card,.dropdown-link,input,.scroll-indicator').forEach(function(el){
+    $$('a,button,.nav-link,.dropdown-link,input,.error-btn,.portal-icon').forEach(function(el){
       el.addEventListener('mouseenter',function(){document.body.classList.add('cursor-hover');});
       el.addEventListener('mouseleave',function(){document.body.classList.remove('cursor-hover');});
-    });
-  }
-
-  // Spotlight lighting on info cards
-  if(canHover&&!reduced){
-    $$('.info-card').forEach(function(c){
-      c.addEventListener('pointermove',function(e){
-        var r=c.getBoundingClientRect();
-        c.style.setProperty('--sx',(e.clientX-r.left)+'px');
-        c.style.setProperty('--sy',(e.clientY-r.top)+'px');
-      },{passive:true});
     });
   }
 
@@ -777,26 +370,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   };
   addEventListener('click',function(e){if(!e.target.closest('.nav-item')){$$('.nav-item.active').forEach(function(i){i.classList.remove('active');var l=i.querySelector('.nav-link[aria-expanded]');if(l)l.setAttribute('aria-expanded','false');});}});
 
-  // Scroll indicator (expand tips)
-  var scrollIndicator=$('#scrollIndicator'),tipsContent=$('#tipsContent');
-  function toggleTips(){
-    var isExpanded=tipsContent.classList.toggle('expanded');
-    scrollIndicator.classList.toggle('expanded',isExpanded);
-    scrollIndicator.setAttribute('aria-expanded',String(isExpanded));
-    if(isExpanded){
-      setTimeout(function(){tipsContent.scrollIntoView({behavior:'smooth',block:'start'});},100);
-      setTimeout(function(){
-        tipsContent.querySelectorAll('.reveal,.reveal-stagger').forEach(function(el){el.classList.add('visible');});
-      },400);
-    }
-  }
-  scrollIndicator.addEventListener('click',toggleTips);
-  scrollIndicator.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleTips();}});
-
-  // Reveals
-  var rObs=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');rObs.unobserve(en.target);}});},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
-  $$('.reveal,.reveal-stagger').forEach(function(el){rObs.observe(el);});
-
   // Smooth anchors
   $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h.length<2)return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:reduced?'auto':'smooth'});closeNav();}});});
 
@@ -809,16 +382,11 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
     if(e.key==='Escape'){
       closeNav();
       $$('.nav-item.active').forEach(function(i){i.classList.remove('active');var l=i.querySelector('.nav-link[aria-expanded]');if(l){l.setAttribute('aria-expanded','false');l.focus();}});
-      if(tipsContent.classList.contains('expanded'))toggleTips();
     }
   });
 
   // Resize
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(innerWidth>900)closeNav();},200);});
-
-  // Newsletter
-  var form=document.querySelector('.newsletter-form');
-  if(form){form.addEventListener('submit',function(e){e.preventDefault();var inp=form.querySelector('input'),btn=form.querySelector('button'),orig=btn.textContent;btn.textContent='✓ Subscribed';inp.value='';setTimeout(function(){btn.textContent=orig;},2800);});}
 
   // Portal iframe
   var PORTAL_URL='https://acadia-post.lovable.app';
