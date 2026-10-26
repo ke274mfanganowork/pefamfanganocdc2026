@@ -126,19 +126,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
 
 /* ============ PORTAL ============ */
 .portal-section{flex:1;display:flex;flex-direction:column;min-height:0;position:relative;background:var(--bg-page);padding:0}
-.portal-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;margin-bottom:0;background:var(--bg-page);border-bottom:1px solid var(--border-hairline);flex-shrink:0;z-index:10;flex-wrap:wrap;border-radius:0}
-[data-theme="dark"] .portal-header{background:var(--bg-page)}
-.portal-title-group{display:flex;align-items:center;gap:.85rem;min-width:0}
-.portal-icon{width:44px;height:44px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--amber-500),var(--amber-400));color:var(--blue-950);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;box-shadow:var(--shadow-gold);transition:transform .4s var(--ease-spring)}
-.portal-header:hover .portal-icon{transform:rotate(-6deg) scale(1.05)}
-.portal-title{font-family:var(--font-display);font-size:clamp(1rem,1.8vw,1.25rem);font-weight:500;color:var(--text-primary);letter-spacing:-.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.portal-subtitle{font-family:var(--font-mono);font-size:.68rem;color:var(--text-tertiary);font-weight:500;letter-spacing:var(--track-wide);text-transform:uppercase;margin-top:2px}
-.portal-actions{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
-.portal-status{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;background:rgba(45,138,78,.08);border:1px solid rgba(45,138,78,.22);border-radius:var(--r-full);font-family:var(--font-mono);font-size:.72rem;font-weight:600;color:var(--forest-600);letter-spacing:var(--track-wide)}
-[data-theme="dark"] .portal-status{background:rgba(45,138,78,.15);color:var(--forest-400);border-color:rgba(74,222,128,.25)}
-.portal-status .dot{width:7px;height:7px;border-radius:50%;background:var(--forest-500);box-shadow:0 0 8px var(--forest-500);animation:statusPulse 2s ease-in-out infinite}
-@keyframes statusPulse{0%,100%{opacity:1}50%{opacity:.45}}
-
 .portal-frame{flex:1;position:relative;background:var(--bg-page);border:none;border-radius:0;overflow:hidden;box-shadow:none;min-height:0}
 [data-theme="dark"] .portal-frame{background:var(--bg-page)}
 .portal-frame::before,.portal-frame::after{display:none}
@@ -166,9 +153,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
 .error-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--gradient-warm);color:var(--blue-950);border-radius:var(--r-full);font-weight:700;font-size:.875rem;transition:all var(--dur-fast) var(--ease-expo);box-shadow:var(--shadow-gold);margin-top:.5rem}
 .error-btn:hover{transform:translateY(-3px);box-shadow:0 20px 40px -8px rgba(245,158,11,.5),0 0 48px rgba(245,158,11,.4)}
 
-.portal-note{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.5rem;margin:0;border-top:1px solid var(--border-hairline);background:var(--bg-page);font-family:var(--font-mono);font-size:.72rem;color:var(--text-tertiary);font-weight:500;letter-spacing:var(--track-wide);text-transform:uppercase;flex-wrap:wrap}
-.portal-note i{color:var(--forest-500);font-size:.85rem}
-
 /* ============ RESPONSIVE ============ */
 @media(max-width:1024px){:root{--sidebar-w:280px}}
 @media(max-width:900px){
@@ -186,11 +170,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   .main-content{margin-left:0;padding-top:calc(var(--bar-h) + env(safe-area-inset-top))}
   .portal-section{padding-top:0}
   .portal-frame{min-height:0;border-radius:0}
-}
-@media(max-width:640px){
-  .portal-header{flex-direction:column;align-items:stretch;gap:.75rem;padding:1rem}
-  .portal-actions{justify-content:space-between}
-  .portal-note{padding:1rem}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
@@ -282,24 +261,7 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
 </nav>
 
 <main class="main-content" id="main">
-  <!-- PORTAL -->
-  <section class="portal-section" aria-labelledby="portal-label">
-    <div class="portal-header">
-      <div class="portal-title-group">
-        <div class="portal-icon" aria-hidden="true"><i class="fas fa-tasks"></i></div>
-        <div>
-          <h1 class="portal-title" id="portal-label">Assignments & Events Portal</h1>
-          <p class="portal-subtitle">Tasks · Deadlines · Progress</p>
-        </div>
-      </div>
-      <div class="portal-actions">
-        <div class="portal-status" id="portalStatus">
-          <span class="dot" aria-hidden="true"></span>
-          <span>Live</span>
-        </div>
-      </div>
-    </div>
-
+  <section class="portal-section">
     <div class="portal-frame" id="portalFrame">
       <div class="portal-loader" id="portalLoader" aria-live="polite" aria-label="Loading assignments portal">
         <div class="loader-mark" aria-hidden="true"><i class="fas fa-heart"></i></div>
@@ -316,11 +278,6 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
         <button class="error-btn" id="errorRetryBtn"><i class="fas fa-redo" aria-hidden="true"></i><span>Try Again</span></button>
       </div>
       <iframe id="assignmentsFrame" src="" title="Assignments and Events Portal — Track tasks, deadlines, and events at KE0274 PEFA Mfangano CYDC" allow="clipboard-write" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-    <div class="portal-note">
-      <i class="fas fa-shield-alt" aria-hidden="true"></i>
-      <span>Synced with your profile · Secure connection · Updated in real-time</span>
     </div>
   </section>
 </main>
@@ -393,15 +350,13 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   var iframe=$('#assignmentsFrame');
   var portalLoader=$('#portalLoader');
   var errorPanel=$('#portalError');
-  var statusEl=$('#portalStatus');
   var retryBtn=$('#errorRetryBtn');
   var loadTimeout;
 
   function loadPortal(){
     if(!iframe)return;
-    errorPanel.classList.remove('active');
-    portalLoader.classList.remove('hidden');
-    statusEl.innerHTML='<span class="dot" aria-hidden="true"></span><span>Loading…</span>';
+    if(errorPanel) errorPanel.classList.remove('active');
+    if(portalLoader) portalLoader.classList.remove('hidden');
     iframe.src=PORTAL_URL;
     clearTimeout(loadTimeout);
     loadTimeout=setTimeout(function(){hideLoader();},8000);
@@ -410,14 +365,12 @@ body.cursor-hover .cursor-ring{width:60px;height:60px;border-color:var(--amber-4
   function hideLoader(){
     if(!portalLoader)return;
     portalLoader.classList.add('hidden');
-    if(statusEl)statusEl.innerHTML='<span class="dot" aria-hidden="true"></span><span>Live</span>';
   }
 
   function showError(){
     if(!portalLoader||!errorPanel)return;
     portalLoader.classList.add('hidden');
     errorPanel.classList.add('active');
-    if(statusEl)statusEl.innerHTML='<span class="dot" style="background:#ef4444;box-shadow:0 0 8px #ef4444;" aria-hidden="true"></span><span style="color:#ef4444;">Offline</span>';
   }
 
   if(iframe){
